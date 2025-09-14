@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Body font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* -------------------------
+   Trusted (Logo/Heading)
+   src/index.css  ->  src/fonts/*
+   ------------------------- */
+@font-face {
+  font-family: 'Trusted';
+  src: url('./fonts/Trusted.woff2') format('woff2'),
+       url('./fonts/Trusted.woff') format('woff'),
+       url('./fonts/Trusted.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Trusted';
+  src: url('./fonts/Trusted.woff2') format('woff2'),
+       url('./fonts/Trusted.woff') format('woff'),
+       url('./fonts/Trusted.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* -------------------------
+   Bercarets (Hero)
+   src/index.css  ->  src/fonts/carsole/*
+   ------------------------- */
+@font-face {
+  font-family: 'Bercarets';
+  src: url('./fonts/carsole/Bercarets.woff2') format('woff2'),
+       url('./fonts/carsole/Bercarets.ttf') format('truetype'),
+       url('./fonts/carsole/Bercarets.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bercarets';
+  src: url('./fonts/carsole/Bercarets.woff2') format('woff2'),
+       url('./fonts/carsole/Bercarets.ttf') format('truetype'),
+       url('./fonts/carsole/Bercarets.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: theme('fontFamily.sans'); /* Poppins as default */
+  }
+}
