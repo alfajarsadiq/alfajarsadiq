@@ -160,9 +160,9 @@ const Home = () => {
     { quote: "Working with Al-Fajar Sadiq has streamlined our entire supply chain. Their market insights are a huge asset.", name: "John Smith", title: "Regional Director, Prime Beverages" }
   ];
   const products = [
-    { name: 'Creamy Sella Rice', description: 'Premium, long-grain aromatic rice.', image: 'src/assets/rice.webp' },
-    { name: 'Vegetable Oil', description: 'Light, healthy, and perfect for all your cooking needs.', image: 'src/assets/oil.webp' },
-    { name: 'Kiwi Goli Soda', description: 'Nutritious, high-fiber flour for soft rotis.', image: 'src/assets/soda.webp' },
+    { name: 'Creamy Sella Rice', description: 'Premium, long-grain aromatic rice.', image: 'https://github.com/alfajarsadiq/alfajarsadiq/blob/main/src/assets/rice.webp?raw=true' },
+    { name: 'Vegetable Oil', description: 'Light, healthy, and perfect for all your cooking needs.', image: 'https://github.com/alfajarsadiq/alfajarsadiq/blob/main/src/assets/oil.webp?raw=true' },
+    { name: 'Kiwi Goli Soda', description: 'Nutritious, high-fiber flour for soft rotis.', image: 'https://github.com/alfajarsadiq/alfajarsadiq/blob/main/src/assets/soda.webp?raw=true' },
     { name: 'Wheat Flour', description: 'Aromatic spices to elevate your dishes.', image: 'https://github.com/alfajarsadiq/alfajarsadiq/blob/main/src/assets/flour.webp?raw=true' }
   ];
   return (
