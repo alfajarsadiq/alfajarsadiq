@@ -31,42 +31,42 @@ const Products = () => {
         {
             name: 'Chakke Fresh Atta',
             category: 'Grains & Flour',
-            image: 'src/assets/pr1.webp',
+            image: 'https://github.com/alfajarsadiq/alfajarsadiq/blob/main/src/assets/pr1.webp?raw=true',
             description: 'Stone-ground from the finest whole wheat grains, Chakke Fresh Atta is packed with fiber and nutrients. It produces exceptionally soft and fluffy rotis and chapatis every time.',
             packageOptions: ['1kg', '5kg', '10kg']
         },
         {
             name: 'Creamy Sella Rice',
             category: 'Rice Varieties',
-            image: 'src/assets/pr2.webp',
+            image: 'https://github.com/alfajarsadiq/alfajarsadiq/blob/main/src/assets/pr2.webp?raw=true',
             description: 'A premium parboiled Basmati rice known for its long, non-sticky grains and creamy texture after cooking. Perfect for creating exquisite biryanis, pulao, and fried rice.',
             packageOptions: ['1kg', '5kg', '20kg']
         },
         {
             name: 'Namlet Goli Soda',
             category: 'Beverages',
-            image: 'src/assets/soda.webp',
+            image: 'https://github.com/alfajarsadiq/alfajarsadiq/blob/main/src/assets/pr3.webp?raw=true',
             description: 'Experience the nostalgic fizz of classic Goli Soda. This refreshing, lemon-flavored carbonated drink is a timeless favorite for quenching thirst on a hot day.',
             packageOptions: ['200ml Bottle', 'Pack of 6', 'Pack of 24']
         },
         {
             name: 'Noora Basmati Rice',
             category: 'Rice Varieties',
-            image: 'src/assets/pr4.webp',
+            image: 'https://github.com/alfajarsadiq/alfajarsadiq/blob/main/src/assets/pr4.webp?raw=true',
             description: 'Characterized by its delightful aroma and slender grains that elongate beautifully when cooked. Noora Basmati Rice is the choice for those who appreciate authentic, aromatic Indian cuisine.',
             packageOptions: ['1kg', '5kg', '10kg']
         },
         {
             name: 'Fajar Tandoori Maida',
             category: 'Grains & Flour',
-            image: 'src/assets/pr5.webp',
+            image: 'https://github.com/alfajarsadiq/alfajarsadiq/blob/main/src/assets/pr5.webp?raw=true',
             description: 'Specially milled for high elasticity and fine texture, Fajar Tandoori Maida is the perfect all-purpose flour for making fluffy naans, bhaturas, and delectable baked goods.',
             packageOptions: ['500g', '1kg', '2kg']
         },
         {
             name: 'Fajar Plastic Product',
             category: 'Household Essentials',
-            image: 'src/assets/pr6.webp',
+            image: 'https://github.com/alfajarsadiq/alfajarsadiq/blob/main/src/assets/pr6.webp?raw=true',
             description: 'A range of high-quality, durable, and food-safe plastic containers. Ideal for storing grains, spices, and leftovers, keeping your kitchen organized and your food fresh.',
             packageOptions: ['Small Container', 'Medium Set', 'Large Jar']
         },
@@ -317,5 +317,6 @@ const Products = () => {
         </div>
     );
 };
+
 
 export default Products;
