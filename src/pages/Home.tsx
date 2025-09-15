@@ -163,7 +163,7 @@ const Home = () => {
     { name: 'Creamy Sella Rice', description: 'Premium, long-grain aromatic rice.', image: 'src/assets/rice.webp' },
     { name: 'Vegetable Oil', description: 'Light, healthy, and perfect for all your cooking needs.', image: 'src/assets/oil.webp' },
     { name: 'Kiwi Goli Soda', description: 'Nutritious, high-fiber flour for soft rotis.', image: 'src/assets/soda.webp' },
-    { name: 'Wheat Flour', description: 'Aromatic spices to elevate your dishes.', image: 'src/assets/flour.webp' }
+    { name: 'Wheat Flour', description: 'Aromatic spices to elevate your dishes.', image: 'https://github.com/alfajarsadiq/alfajarsadiq/blob/main/src/assets/flour.webp?raw=true' }
   ];
   return (
     <div 
