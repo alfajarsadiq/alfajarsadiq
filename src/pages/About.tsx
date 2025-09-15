@@ -103,7 +103,7 @@ const About = () => {
               viewport={{ once: true }}
             >
               <img
-                src="src/assets/aboutt.webp"
+                src="https://github.com/alfajarsadiq/alfajarsadiq/blob/main/src/assets/aboutt.webp?raw=true"
                 alt="Al-Fajar Sadiq trading operations"
                 className="w-full h-auto object-cover rounded-2xl shadow-xl"
               />
