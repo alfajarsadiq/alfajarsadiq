@@ -38,7 +38,7 @@ const Contact = () => {
       phone: '+971 558867751',
       email: 'dubai@alfajarsadiq.com',
       hours: 'Mon - Fri: 8:00 AM - 6:00 PM',
-      bgImage: 'src/assets/dubai.webp',
+      bgImage: 'https://github.com/alfajarsadiq/alfajarsadiq/blob/main/src/assets/dubai.webp?raw=true',
       position: { lat: 25.295457092611727, lng: 55.389022524552274 }
     },
     {
@@ -47,7 +47,7 @@ const Contact = () => {
       phone: '+971 2 XXX XXXX',
       email: 'abudhabi@alfajarsadiq.com',
       hours: 'Mon - Fri: 8:00 AM - 6:00 PM',
-      bgImage: 'src/assets/abudubai.webp',
+      bgImage: 'https://github.com/alfajarsadiq/alfajarsadiq/blob/main/src/assets/abudubai.webp?raw=true',
       position: { lat: 24.38, lng: 54.45 }
     },
     {
@@ -56,7 +56,7 @@ const Contact = () => {
       phone: '+971 6 XXX XXXX',
       email: 'sharjah@alfajarsadiq.com',
       hours: 'Mon - Fri: 8:00 AM - 6:00 PM',
-      bgImage: 'src/assets/sharjah.webp',
+      bgImage: 'https://github.com/alfajarsadiq/alfajarsadiq/blob/main/src/assets/sharjah.webp?raw=true',
       position: { lat: 25.32, lng: 55.40 }
     }
   ];
