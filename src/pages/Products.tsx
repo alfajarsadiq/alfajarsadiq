@@ -45,7 +45,7 @@ const Products = () => {
         {
             name: 'Namlet Goli Soda',
             category: 'Beverages',
-            image: 'https://github.com/alfajarsadiq/alfajarsadiq/blob/main/src/assets/pr3.webp?raw=true',
+            image: 'https://github.com/alfajarsadiq/alfajarsadiq/blob/main/src/assets/soda.webp?raw=true',
             description: 'Experience the nostalgic fizz of classic Goli Soda. This refreshing, lemon-flavored carbonated drink is a timeless favorite for quenching thirst on a hot day.',
             packageOptions: ['200ml Bottle', 'Pack of 6', 'Pack of 24']
         },
@@ -320,3 +320,4 @@ const Products = () => {
 
 
 export default Products;
+
