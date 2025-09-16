@@ -55,7 +55,7 @@ const Navbar = () => {
           />
           <div>
             <span className={`block text-2xl sm:text-3xl font-trusted leading-tight transition-colors duration-300 ${isScrolled ? 'text-[#234E70]' : 'text-[#FAFAFA] drop-shadow-md'}`}>
-              Al-Fajar Al Sadiq
+              Al Fajar Al Sadiq
             </span>
             <span className={`block text-[10px] sm:text-xs font-light tracking-widest uppercase transition-colors duration-300 ${isScrolled ? 'text-[#707070]' : 'text-gray-200 drop-shadow-md'}`}>
               General Trading LLC.
