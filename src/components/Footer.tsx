@@ -106,7 +106,7 @@ const Footer = () => {
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone className="h-5 w-5" style={{ color: '#C6A664' }} /> {/* Champagne Gold */}
-                  <span className="text-gray-300 hover:text-[#C6A664] transition-colors cursor-pointer">+971 558867751</span>
+                  <span className="text-gray-300 hover:text-[#C6A664] transition-colors cursor-pointer">+971 585639040</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="h-5 w-5" style={{ color: '#C6A664' }} /> {/* Champagne Gold */}
