@@ -61,7 +61,7 @@ const Contact = () => {
     }
   ];
 
-    const faqData = [
+  const faqData = [
     {
       question: "What kind of products does Al-Fajar Sadiq trade?",
       answer: "We are a general trading company dealing in a wide range of products across various sectors. For specific product inquiries, please get in touch with our sales team through the contact form."
@@ -99,7 +99,8 @@ const Contact = () => {
     }
 
     try {
-      const response = await fetch(API_URL, {
+      // --- FIX: Appended '/contact' to the API URL ---
+      const response = await fetch(`${API_URL}/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
@@ -108,15 +109,18 @@ const Contact = () => {
       const result = await response.json();
 
       if (!response.ok) {
-        throw new Error(result.message || 'An error occurred while sending the message.');
+        throw new Error(result.error || 'An error occurred while sending the message.');
       }
       
       setStatus({ submitted: true, message: result.message || 'Message sent successfully!', isError: false });
       reset();
     } catch (error: any) {
       let errorMessage = 'An unexpected error occurred. Please try again.';
-      if (error instanceof TypeError && error.message.includes('Failed to fetch')) {
-        errorMessage = 'Could not connect to the server. Please try again later.';
+      if (error instanceof SyntaxError) {
+        // This catches the "Unexpected token '<'" error
+        errorMessage = "Received an invalid response from the server. Please try again.";
+      } else if (error instanceof TypeError && error.message.includes('Failed to fetch')) {
+        errorMessage = 'Could not connect to the server. Please check your internet connection.';
       } else {
         errorMessage = error.message;
       }
