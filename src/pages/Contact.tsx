@@ -36,7 +36,7 @@ const Contact = () => {
       name: 'Dubai Head Office',
       address: 'Ferrari Foods LLC Dubai Branch',
       phone: '+971 558867751',
-      email: 'dubai@alfajarsadiq.com',
+      email: 'info@alfajarsadiq.com',
       hours: 'Mon - Fri: 8:00 AM - 6:00 PM',
       bgImage: 'https://github.com/alfajarsadiq/alfajarsadiq/blob/main/src/assets/dubai.webp?raw=true',
       position: { lat: 25.295457092611727, lng: 55.389022524552274 }
@@ -44,8 +44,8 @@ const Contact = () => {
     {
       name: 'Abu Dhabi Branch',
       address: 'Al-Fajar Al Sadiq, Industrial Zone, Abu Dhabi, UAE',
-      phone: '+971 2 XXX XXXX',
-      email: 'abudhabi@alfajarsadiq.com',
+      phone: '+971 585639040',
+      email: 'info@alfajarsadiq.com',
       hours: 'Mon - Fri: 8:00 AM - 6:00 PM',
       bgImage: 'https://github.com/alfajarsadiq/alfajarsadiq/blob/main/src/assets/abudubai.webp?raw=true',
       position: { lat: 24.38, lng: 54.45 }
@@ -53,8 +53,8 @@ const Contact = () => {
     {
       name: 'Sharjah Office',
       address: 'Al-Fajar Al Sadiq, Industrial Area, Sharjah, UAE',
-      phone: '+971 6 XXX XXXX',
-      email: 'sharjah@alfajarsadiq.com',
+      phone: '+971 585639040',
+      email: 'info@alfajarsadiq.com',
       hours: 'Mon - Fri: 8:00 AM - 6:00 PM',
       bgImage: 'https://github.com/alfajarsadiq/alfajarsadiq/blob/main/src/assets/sharjah.webp?raw=true',
       position: { lat: 25.32, lng: 55.40 }
