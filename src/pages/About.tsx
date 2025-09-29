@@ -198,7 +198,7 @@ const About = () => {
               >
                 <value.icon className="h-8 w-8 mb-4 text-[#C6A664]" />
                 <h4 className="text-lg font-semibold mb-2 text-[#234E70]">{value.title}</h4>
-                <p className="text-sm leading-relaxed text-[#707070]">{value.description}</p>
+                <p className="text-sm leading-relaxed text-[#707070]-800">{value.description}</p>
               </motion.div>
             ))}
           </div>
