@@ -44,7 +44,7 @@ const Contact = () => {
     {
       name: 'Abu Dhabi Branch',
       address: 'Al-Fajar Al Sadiq, Industrial Zone, Abu Dhabi, UAE',
-      phone: '+971 585639040',
+      phone: '+971 557731475',
       email: 'info@alfajarsadiq.com',
       hours: 'Mon - Fri: 8:00 AM - 6:00 PM',
       bgImage: 'https://github.com/alfajarsadiq/alfajarsadiq/blob/main/src/assets/abudubai.webp?raw=true',
@@ -53,7 +53,7 @@ const Contact = () => {
     {
       name: 'Sharjah Office',
       address: 'Al-Fajar Al Sadiq, Industrial Area, Sharjah, UAE',
-      phone: '+971 585639040',
+      phone: '+971 557731475',
       email: 'info@alfajarsadiq.com',
       hours: 'Mon - Fri: 8:00 AM - 6:00 PM',
       bgImage: 'https://github.com/alfajarsadiq/alfajarsadiq/blob/main/src/assets/sharjah.webp?raw=true',
