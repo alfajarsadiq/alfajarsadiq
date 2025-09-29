@@ -61,7 +61,7 @@ const About = () => {
           </motion.h1>
 
           <motion.p
-            className="text-xl sm:text-2xl max-w-3xl mx-auto mb-8 leading-relaxed text-gray-200"
+            className="text-xl sm:text-2xl max-w-3xl mx-auto mb-8 leading-relaxed text-gray-800"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -118,14 +118,14 @@ const About = () => {
               <h2 className="font-trusted text-3xl sm:text-4xl font-bold mb-6 text-[#234E70]">
                 Our Story
               </h2>
-              <p className="text-base sm:text-lg mb-6 leading-relaxed text-[#707070]">
+              <p className="text-base sm:text-lg mb-6 leading-relaxed text-[#707070]-800">
                 Founded in 1998, Al-Fajar Sadiq General Trading LLC started as a small trading firm in
                 Dubai with little more than determination and a vision. The early years were filled with
                 challenges, but with hard work, resilience, and an unshakable commitment to our mission,
                 we turned every struggle into an opportunity to grow and earn the trust of our partners
                 and retailers.
               </p>
-              <p className="text-base sm:text-lg leading-relaxed text-[#707070]">
+              <p className="text-base sm:text-lg leading-relaxed text-[#707070]-800">
                 Today, after over 27 years of perseverance and progress, we have grown into a trusted
                 distribution powerhouse, proudly serving retailers across all seven Emirates. Our journey
                 is more than business — it is a story of grit, faith, and ambition, inspired by the belief
@@ -149,7 +149,7 @@ const About = () => {
             >
               <Target className="h-10 w-10 mx-auto mb-4 text-[#C6A664]" />
               <h3 className="font-trusted text-2xl font-bold mb-3 text-[#234E70]">Our Mission</h3>
-              <p className="leading-relaxed text-[#707070]">
+              <p className="leading-relaxed text-[#707070]-800">
                 To provide exceptional trading and distribution services that connect quality suppliers
                 with retailers, fostering growth and success.
               </p>
@@ -164,7 +164,7 @@ const About = () => {
             >
               <Eye className="h-10 w-10 mx-auto mb-4 text-[#C6A664]" />
               <h3 className="font-trusted text-2xl font-bold mb-3 text-[#234E70]">Our Vision</h3>
-              <p className="leading-relaxed text-[#707070]">
+              <p className="leading-relaxed text-[#707070]-800">
                 To be the UAE&apos;s leading general trading company, recognized for excellence,
                 innovation, and unwavering commitment to our partners.
               </p>
@@ -179,7 +179,7 @@ const About = () => {
             >
               <Heart className="h-10 w-10 mx-auto mb-4 text-[#C6A664]" />
               <h3 className="font-trusted text-2xl font-bold mb-3 text-[#234E70]">Our Values</h3>
-              <p className="leading-relaxed text-[#707070]">
+              <p className="leading-relaxed text-[#707070]-800">
                 Excellence, integrity, reliability, and innovation guide every aspect of our business,
                 ensuring we deliver value that exceeds expectations.
               </p>
