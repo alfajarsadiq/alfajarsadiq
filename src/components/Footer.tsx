@@ -101,12 +101,12 @@ const Footer = () => {
                   <MapPin className="h-5 w-5 mt-0.5 flex-shrink-0" style={{ color: '#C6A664' }} /> {/* Champagne Gold */}
                   <div className="text-gray-300">
                     <p className="font-semibold text-[#FAFAFA]">Dubai Office:</p>
-                    <p>Ferrari Foods LLC </p>
+                    <p>Al Fajar Al Sadiq </p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone className="h-5 w-5" style={{ color: '#C6A664' }} /> {/* Champagne Gold */}
-                  <span className="text-gray-300 hover:text-[#C6A664] transition-colors cursor-pointer">+971 585639040</span>
+                  <span className="text-gray-300 hover:text-[#C6A664] transition-colors cursor-pointer">+971 557731475</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="h-5 w-5" style={{ color: '#C6A664' }} /> {/* Champagne Gold */}
