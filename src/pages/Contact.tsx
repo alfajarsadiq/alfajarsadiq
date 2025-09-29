@@ -417,7 +417,7 @@ const Contact = () => {
               viewport={{ once: true }}
             >
               <div className="bg-black/60 backdrop-blur-md rounded-xl px-4 py-3 sm:px-6 sm:py-4 shadow-lg border border-[#C6A664]/50 text-white text-[10px] sm:text-sm flex flex-wrap items-center justify-center text-center gap-x-3 sm:gap-x-4 gap-y-2">
-                <span>📍 Ferrari Foods LLC, Dubai</span>
+                <span>📍 Al Fajar Al Sadiq, Dubai</span>
                 <span>📞 +971 558867751</span>
                 <span className="hidden xs:inline">⏰ Mon-Fri: 8AM-6PM</span>
               </div>
