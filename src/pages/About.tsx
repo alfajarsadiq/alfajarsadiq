@@ -128,7 +128,7 @@ const About = () => {
               <p className="text-base sm:text-lg leading-relaxed text-[#707070]-800">
                 Today, after over 27 years of perseverance and progress, we have grown into a trusted
                 distribution powerhouse, proudly serving retailers across all seven Emirates. Our journey
-                is more than business — it is a story of grit, faith, and ambition, inspired by the belief
+                is more than business  it is a story of grit, faith, and ambition, inspired by the belief
                 that with dedication and trust, success is always within reach.
               </p>
             </motion.div>
