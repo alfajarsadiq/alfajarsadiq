@@ -34,7 +34,7 @@ const Contact = () => {
   const offices = [
     {
       name: 'Dubai Head Office',
-      address: 'Ferrari Foods LLC Dubai Branch',
+      address: 'Al Fajar Al Sadiq,Dubai Branch',
       phone: '+971 558867751',
       email: 'info@alfajarsadiq.com',
       hours: 'Mon - Fri: 8:00 AM - 6:00 PM',
