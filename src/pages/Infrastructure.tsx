@@ -10,25 +10,25 @@ import infraBg from '/src/assets/infrastructre.webp';
 const Infrastructure = () => {
   const facilities = [
     {
-      name: 'Dubai Central Warehouse',
-      location: 'Business Bay, Dubai',
+      name: 'Al Fajar Al Sadiq Warehouse',
+      location: 'Al-Qusais Inustrial Area 1, Dubai',
       area: '15,000 sq ft',
       image: 'https://images.pexels.com/photos/4481532/pexels-photo-4481532.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop'
     },
     {
-      name: 'Abu Dhabi Distribution Center',
+      name: 'Abu Dhabi Warehouse',
       location: 'Industrial Zone, Abu Dhabi',
       area: '12,000 sq ft',
       image: 'https://images.pexels.com/photos/4393668/pexels-photo-4393668.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop'
     },
     {
-      name: 'Sharjah Logistics Hub',
-      location: 'Industrial Area, Sharjah',
+      name: 'Ajman Warehouse',
+      location: 'Sheikh Mohammed Bin Rashid Al Maktoum Ajman, UAE',
       area: '10,000 sq ft',
       image: 'https://images.pexels.com/photos/4481259/pexels-photo-4481259.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop'
     },
     {
-      name: 'Northern Emirates Office',
+      name: 'Ras Al Khaimah Warehouse',
       location: 'Ras Al Khaimah',
       area: '5,000 sq ft',
       image: 'https://images.pexels.com/photos/4386321/pexels-photo-4386321.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop'
