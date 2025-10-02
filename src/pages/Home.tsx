@@ -4,7 +4,7 @@ import { motion, useInView, animate, useScroll, useTransform } from 'framer-moti
 import { ArrowRight, Award, Truck, Globe, Users, Quote, Play, Pause, ArrowUpRight } from 'lucide-react';
 
 // Video assets
-import promoVideo from '/src/assets/hvid.webm';
+import promoVideo from '/src/assets/promo.webm';
 import heroVideo from '/src/assets/hvid.webm';
 
 // Partner logos
