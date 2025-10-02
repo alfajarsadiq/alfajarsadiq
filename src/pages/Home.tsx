@@ -155,9 +155,9 @@ const Home = () => {
   ];
 
   const testimonials = [
-    { quote: "Al-Fajar Sadiq's distribution network is unparalleled. Their efficiency has been instrumental to our brand's growth.", name: "Ahmed Al Mansoori", title: "CEO, Global Food Group" },
-    { quote: "Their commitment to quality and timely delivery is something we can always rely on. They are a true partner.", name: "Fatima Al Kuwaiti", title: "Supply Chain Manager, Pure Grains Co." },
-    { quote: "Working with Al-Fajar Sadiq has streamlined our entire supply chain. Their market insights are a huge asset.", name: "John Smith", title: "Regional Director, Prime Beverages" }
+    { quote: "Iffco’s collaboration with Al-Fajar Sadiq has been seamless. Their distribution reliability ensures our products reach markets on time, every time.",title: "IFFCO" },
+    { quote: "Al-Fajar Sadiq has consistently demonstrated a strong commitment to quality and service. Their efficient logistics support has strengthened our supply chain.",title: "GrandMills" },
+    { quote: "With Al-Fajar Sadiq’s distribution expertise, we’ve been able to streamline market access and maintain timely deliveries. A trusted partner in every sense.",title: "Al Ghurair Foods" }
   ];
   const products = [
     { name: 'Creamy Sella Rice', description: 'Premium, long-grain aromatic rice.', image: 'https://github.com/alfajarsadiq/alfajarsadiq/blob/main/src/assets/rice.webp?raw=true' },
@@ -338,8 +338,7 @@ const Home = () => {
                 <Quote className="absolute top-4 left-4 h-12 w-12 opacity-10" style={{ color: '#C6A664' }} />
                 <p className="italic mb-6 text-left relative z-10" style={{ color: '#707070' }}>"{testimonial.quote}"</p>
                 <div className="text-right">
-                  <p className="font-bold" style={{ color: '#234E70' }}>{testimonial.name}</p>
-                  <p className="text-sm" style={{ color: '#707070' }}>{testimonial.title}</p>
+                  <p className="text-bold" style={{ color: '#050505ff' }}>{testimonial.title}</p>
                 </div>
               </motion.div>
             ))}
