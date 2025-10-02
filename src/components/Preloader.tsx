@@ -164,7 +164,7 @@ const Preloader: React.FC<PreloaderProps> = ({
 
       <div className="relative z-10 flex w-full max-w-xs flex-col items-center text-center text-white">
         <h1 className="mb-2 text-3xl font-bold" style={{ fontFamily: 'Trusted, sans-serif' }}>
-          Al-Fajar Al Sadiq
+          Al Fajar Al Sadiq
         </h1>
         <p className="mb-8 text-sm text-gray-300">27+ Years of Excellence in Trading</p>
 
@@ -203,5 +203,6 @@ const Preloader: React.FC<PreloaderProps> = ({
     </motion.div>
   );
 };
+
 
 export default Preloader;
