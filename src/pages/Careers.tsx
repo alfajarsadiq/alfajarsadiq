@@ -20,14 +20,14 @@ const Careers = () => {
     { icon: Briefcase, title: 'Competitive Package', description: 'Attractive salary and benefits package with performance incentives' }
   ];
 
-  const jobOpenings = [
-    { title: 'Sales Manager', department: 'Sales & Marketing', location: 'Dubai', type: 'Full-time', experience: '5+ years' },
-    { title: 'Warehouse Supervisor', department: 'Operations', location: 'Abu Dhabi', type: 'Full-time', experience: '3+ years' },
-    { title: 'Logistics Coordinator', department: 'Logistics', location: 'Sharjah', type: 'Full-time', experience: '2+ years' },
-    { title: 'Business Development Executive', department: 'Business Development', location: 'Dubai', type: 'Full-time', experience: '3+ years' },
-    { title: 'Accounts Manager', department: 'Finance', location: 'Dubai', type: 'Full-time', experience: '4+ years' },
-    { title: 'Customer Service Representative', department: 'Customer Service', location: 'Multiple Locations', type: 'Full-time', experience: '1+ years' }
-  ];
+  // const jobOpenings = [
+  //   { title: 'Sales Manager', department: 'Sales & Marketing', location: 'Dubai', type: 'Full-time', experience: '5+ years' },
+  //   { title: 'Warehouse Supervisor', department: 'Operations', location: 'Abu Dhabi', type: 'Full-time', experience: '3+ years' },
+  //   { title: 'Logistics Coordinator', department: 'Logistics', location: 'Sharjah', type: 'Full-time', experience: '2+ years' },
+  //   { title: 'Business Development Executive', department: 'Business Development', location: 'Dubai', type: 'Full-time', experience: '3+ years' },
+  //   { title: 'Accounts Manager', department: 'Finance', location: 'Dubai', type: 'Full-time', experience: '4+ years' },
+  //   { title: 'Customer Service Representative', department: 'Customer Service', location: 'Multiple Locations', type: 'Full-time', experience: '1+ years' }
+  // ];
 
   const onSubmit = (data: any) => {
     const formData = { ...data, resume: selectedFile };
@@ -163,10 +163,10 @@ const Careers = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            Current Opportunities
+            Coming Soon
           </motion.h2>
           
-          <div className="grid gap-6">
+          {/* <div className="grid gap-6">
             {jobOpenings.map((job, index) => (
               <motion.div
                 key={job.title}
@@ -194,7 +194,7 @@ const Careers = () => {
                 </div>
               </motion.div>
             ))}
-          </div>
+          </div> */}
         </div>
       </section>
       <section id="application-form" className="py-20 sm:py-24">
@@ -238,10 +238,10 @@ const Careers = () => {
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-2" style={{ color: '#707070' }}>Position Applied For *</label>
-                  <select {...register('position', { required: 'Please select a position' })} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C6A664] focus:border-transparent">
+                  {/* <select {...register('position', { required: 'Please select a position' })} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C6A664] focus:border-transparent">
                     <option value="">Select a position</option>
                     {jobOpenings.map((job) => (<option key={job.title} value={job.title}>{job.title} - {job.location}</option>))}
-                  </select>
+                  </select> */}
                   {errors.position && <p className="text-red-500 text-sm mt-1">{errors.position.message as string}</p>}
                 </div>
               </div>
