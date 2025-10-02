@@ -39,7 +39,7 @@ const Contact = () => {
       email: 'info@alfajarsadiq.com',
       hours: 'Mon - Fri: 8:00 AM - 6:00 PM',
       bgImage: 'https://github.com/alfajarsadiq/alfajarsadiq/blob/main/src/assets/dubai.webp?raw=true',
-      position: { lat: 25.295457092611727, lng: 55.389022524552274 }
+      position: { lat: 25.28363824086075, lng: 55.385726487907895 }
     },
     {
       name: 'Abu Dhabi Branch',
@@ -196,7 +196,7 @@ const Contact = () => {
         };
 
         const map = new window.google.maps.Map(mapRef.current, {
-            center: { lat: 25.295457092611727, lng: 55.389022524552274 },
+            center: { lat: 25.28363824086075, lng: 55.385726487907895 },
             zoom: 16,
             disableDefaultUI: true,
             styles: isMapDark ? mapStyles.dark : mapStyles.light,
