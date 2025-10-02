@@ -328,7 +328,7 @@ const Infrastructure = () => {
               viewport={{ once: true }}
             >
               <img
-                src="assets/sustain.webp"
+                src="https://github.com/alfajarsadiq/alfajarsadiq/blob/main/src/assets/sustain.webp?raw=true"
                 alt="Sustainable warehouse with green initiatives"
                 className="w-full h-80 object-cover"
               />
