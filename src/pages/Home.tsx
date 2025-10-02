@@ -274,9 +274,9 @@ const Home = () => {
               </motion.div>
             ))}
           </div>
-          <motion.div className="mt-12" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }} viewport={{ once: true }}>
+          {/* <motion.div className="mt-12" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }} viewport={{ once: true }}>
             <Link to="/partners" className="inline-flex items-center justify-center px-8 py-3 font-semibold rounded-lg transition-all duration-300 bg-[#C6A664] text-[#1A1A1A] hover:bg-[#b5955a]">View All Partners <ArrowRight className="ml-2 h-5 w-5" /></Link>
-          </motion.div>
+          </motion.div> */}
         </div>
       </section>
 
