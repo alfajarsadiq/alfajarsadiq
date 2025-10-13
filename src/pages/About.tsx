@@ -57,7 +57,7 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            About <span className="text-[#C6A664]">Al-Fajar Sadiq</span>
+            About <span className="text-[#C6A664]">Al Fajar Al Sadiq</span>
           </motion.h1>
 
           <motion.p
