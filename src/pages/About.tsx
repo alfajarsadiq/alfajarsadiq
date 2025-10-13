@@ -1,14 +1,17 @@
 // src/pages/About.tsx
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { Award, Target, Eye, Heart, Quote } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-// ✅ Use relative paths (pages -> assets)
+// --- COMPONENT IMPORTS ---
+import Timeline from '../components/Timeline'; // <-- IMPORT THE NEW COMPONENT
+
+// --- ASSET IMPORTS ---
 import textureBg from '../assets/texture.webp';
 import aboutHero from '../assets/about.webp';
-// --- NEW: Founder's image ---
 import founderImage from '../assets/founder.jpg'; 
+import aboutStoryImage from '../assets/aboutt.webp';
 
 const About = () => {
   const values = [
@@ -26,13 +29,6 @@ const About = () => {
     { year: '2020', event: 'Implemented advanced logistics technology and digital transformation.' },
     { year: '2025', event: 'Celebrating over 27 years of excellence and continued growth.' },
   ];
-
-  const journeyRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: journeyRef,
-    offset: ['start center', 'end center'],
-  });
-  const pathLength = useTransform(scrollYProgress, [0, 0.8], [0, 1]);
 
   return (
     <div
@@ -103,7 +99,7 @@ const About = () => {
               viewport={{ once: true }}
             >
               <img
-                src="https://github.com/alfajarsadiq/alfajarsadiq/blob/main/src/assets/aboutt.webp?raw=true"
+                src={aboutStoryImage}
                 alt="Al-Fajar Sadiq trading operations"
                 className="w-full h-auto object-cover rounded-2xl shadow-xl"
               />
@@ -128,7 +124,7 @@ const About = () => {
               <p className="text-base sm:text-lg leading-relaxed text-[#707070]-800">
                 Today, after over 27 years of perseverance and progress, we have grown into a trusted
                 distribution powerhouse, proudly serving retailers across all seven Emirates. Our journey
-                is more than business  it is a story of grit, faith, and ambition, inspired by the belief
+                is more than business it is a story of grit, faith, and ambition, inspired by the belief
                 that with dedication and trust, success is always within reach.
               </p>
             </motion.div>
@@ -205,7 +201,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* --- UPDATED: FOUNDER PROFILE CARD SECTION --- */}
+      {/* --- FOUNDER PROFILE CARD SECTION --- */}
       <section className="py-20 sm:py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -239,77 +235,9 @@ const About = () => {
         </div>
       </section>
 
-      {/* JOURNEY TIMELINE */}
-      <section ref={journeyRef} className="py-20 sm:py-24 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2
-            className="font-trusted text-3xl sm:text-4xl font-bold text-center mb-20 text-[#234E70]"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            Our Journey of Excellence
-          </motion.h2>
+      {/* --- JOURNEY TIMELINE (Now using the component) --- */}
+      <Timeline milestones={milestones} />
 
-          <div className="hidden md:block relative h-[360px]">
-            <svg width="100%" height="100%" viewBox="0 0 1200 360" preserveAspectRatio="none" className="absolute top-0 left-0">
-              <motion.path
-                d="M 40 180 C 160 40, 280 320, 480 180 S 680 40, 880 180 S 1080 320, 1160 180"
-                fill="none"
-                stroke="#234E70"
-                strokeWidth="3"
-                style={{ pathLength }}
-              />
-            </svg>
-
-            <div className="absolute inset-0">
-              {milestones.map((m, i) => {
-                const x = [6, 24, 42, 60, 78, 92][i];
-                const y = [0, -110, 110, -110, 110, 0][i];
-                return (
-                  <motion.div
-                    key={m.year}
-                    className="absolute -translate-x-1/2"
-                    style={{ left: `${x}%`, top: '50%' }}
-                    initial={{ opacity: 0, y: y + 30 }}
-                    whileInView={{ opacity: 1, y }}
-                    transition={{ duration: 0.5, delay: 0.15 }}
-                    viewport={{ root: journeyRef, amount: 0.4, once: true }}
-                  >
-                    <div className="relative p-5 bg-white/90 backdrop-blur rounded-2xl shadow-lg w-56 text-center">
-                      <div className="absolute -top-5 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-[#C6A664] text-[#1A1A1A] font-bold text-sm rounded-full shadow">
-                        {m.year}
-                      </div>
-                      <p className="text-sm pt-3 leading-relaxed text-[#707070]">{m.event}</p>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </div>
-
-          <div className="md:hidden relative space-y-12 before:absolute before:inset-y-0 before:left-5 before:w-0.5 before:bg-[#234E70]/20">
-            {milestones.map((m, i) => (
-              <motion.div
-                key={m.year}
-                className="relative flex items-start"
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.05 }}
-                viewport={{ once: true }}
-              >
-                <div className="flex-shrink-0 flex items-center justify-center w-10 h-10 bg-[#C6A664] text-[#1A1A1A] font-bold text-sm rounded-full z-10 shadow mt-4">
-                  {m.year}
-                </div>
-                <div className="flex-1 bg-white/90 backdrop-blur p-4 rounded-lg shadow-md ml-6">
-                  <p className="text-sm leading-relaxed text-[#707070]">{m.event}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
