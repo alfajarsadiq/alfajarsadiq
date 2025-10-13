@@ -61,7 +61,7 @@ const About = () => {
           </motion.h1>
 
           <motion.p
-            className="text-xl sm:text-2xl max-w-3xl mx-auto mb-8 leading-relaxed text-gray-800"
+            className="text-xl sm:text-2xl max-w-3xl mx-auto mb-8 leading-relaxed text-white-500"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
