@@ -160,10 +160,10 @@ const Home = () => {
     { quote: "With Al-Fajar Sadiq’s distribution expertise, we’ve been able to streamline market access and maintain timely deliveries. A trusted partner in every sense.",title: "Al Ghurair Foods" }
   ];
   const products = [
+    { name: 'Wheat Flour', description: 'Aromatic spices to elevate your dishes.', image: 'https://github.com/alfajarsadiq/alfajarsadiq/blob/main/src/assets/flour.webp?raw=true' },
     { name: 'Creamy Sella Rice', description: 'Premium, long-grain aromatic rice.', image: 'https://github.com/alfajarsadiq/alfajarsadiq/blob/main/src/assets/rice.webp?raw=true' },
     { name: 'Vegetable Oil', description: 'Light, healthy, and perfect for all your cooking needs.', image: 'https://github.com/alfajarsadiq/alfajarsadiq/blob/main/src/assets/oil.webp?raw=true' },
-    { name: 'Kiwi Goli Soda', description: 'Nutritious, high-fiber flour for soft rotis.', image: 'https://github.com/alfajarsadiq/alfajarsadiq/blob/main/src/assets/soda.webp?raw=true' },
-    { name: 'Wheat Flour', description: 'Aromatic spices to elevate your dishes.', image: 'https://github.com/alfajarsadiq/alfajarsadiq/blob/main/src/assets/flour.webp?raw=true' }
+    { name: 'Kiwi Goli Soda', description: 'Nutritious, high-fiber flour for soft rotis.', image: 'https://github.com/alfajarsadiq/alfajarsadiq/blob/main/src/assets/soda.webp?raw=true' }
   ];
   return (
     <div 
