@@ -232,7 +232,7 @@ const About = () => {
               </p>
               <Quote className="w-8 h-8 text-[#234E70]/20 mb-2 mx-auto md:mx-0" />
               <p className="text-[#707070] italic leading-relaxed">
-                "Our journey began with a simple vision: to build a distribution network founded on trust and an unwavering commitment to quality. Today, that vision is the bedrock of our success, driving us to continuously innovate and exceed the expectations of our partners."
+                "Our journey began with a simple vision to build a distribution network rooted in trust, integrity, and an unwavering commitment to quality. What started as a small step of belief has today grown into a legacy of excellence. At Al Fajar Al Sadiq, we see every partnership as a promise a promise to deliver not just products, but reliability, consistency, and care. Guided by that same founding vision, we continue to innovate, expand, and redefine what it means to serve with honesty and heart."
               </p>
             </div>
           </motion.div>
