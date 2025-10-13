@@ -18,7 +18,7 @@ import khaleejLogo from '/src/assets/khaleejlogo.png';
 // Brand Network Logos
 import hostLogo from '/src/assets/logo.png';
 import habibiLogo from '/src/assets/habibilogo.png';
-import safariLogo from '/src/assets/safarilogo.png';
+// import safariLogo from '/src/assets/safarilogo.png';
 import ferrariLogo from '/src/assets/ferrarilogo.png';
 import namletLogo from '/src/assets/namletlogo.png';
 
@@ -132,7 +132,7 @@ const Home = () => {
       host: { id: 'al-fajar-sadiq', name: 'Al-Fajar Sadiq', logo: hostLogo },
       brands: [
           { id: 'habibi', name: 'Habibi', logo: habibiLogo, url: '#' },
-          { id: 'safari-foods', name: 'Safari Foods', logo: safariLogo, url: '#' },
+          // { id: 'safari-foods', name: 'Safari Foods', logo: safariLogo, url: '#' },
           { id: 'namlet', name: 'Namlet', logo: namletLogo, url: '#' },
           { id: 'ferrari-foods', name: 'Ferrari Foods', logo: ferrariLogo, url: '#' },
       ],
