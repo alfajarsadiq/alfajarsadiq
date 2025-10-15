@@ -1,122 +1,133 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Search, Package, Leaf, Droplet, X } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, ChevronLeft, X } from 'lucide-react';
 
-// --- Import local banner images with corrected paths ---
-import productImg from '../assets/product.webp';
-import productImg2 from '../assets/product2.webp';
+// --- COMPONENT IMPORTS ---
+import ProductHero from '../components/ProductHero';
+import StickyProductShowcase from '../components/StickyProductShowcase';
+
+// --- BRAND LOGO & ASSET IMPORTS ---
 import textureBg from '../assets/texture.webp';
+import fajarLogo from '../assets/logo.png';
+import iffcoLogo from '../assets/iffcologo.png';
+import alghurairlogo from '../assets/alghurairlogo.png';
+import grandmillslogo from '../assets/grandlogo.png';
+import sounlogo from '../assets/sounlogo.png';
+import alainlogo from '../assets/alain.png';
+
+// --- PRODUCT IMAGE IMPORTS ---
+import hareeswheatImg from '../assets/hareeswheat.png';
+import parathaMaidaImg from '../assets/parathamaida.png';
+import iffcoAllPurposeImg from '../assets/allpurpose.png';
+import flourn1Img from '../assets/flourn1.png';
+import flourn2Img from '../assets/flourn2.png';
+import malabarImg from '../assets/malabar.png';
+import allbakingImg from '../assets/allbaking.png';
+import flourn3Img from '../assets/flourn3.png';
+import pashtunimg from '../assets/pashtun.png';
+import paktwoimg from '../assets/pak2.png';
+import pakoneimg from '../assets/pak1.png';
+import classiconeimg from '../assets/classic1.png';
+import alparathaimg from '../assets/alparatha.png';
+import alafghanimg from '../assets/alafghan.png';
+import jatta from '../assets/jatta.png';
+import almaidaimg from '../assets/almaida.png';
+import rawanpureimg from '../assets/rawanpure.png';
+import rawanimg from '../assets/rawan.png';
+import fajarChakkeAtta from '../assets/pr1.webp';
+import fajarTandooriMaida from '../assets/pr5.webp';
+import jmaida from '../assets/jmaida.png';
+import zeinImg from '../assets/zein.png';
+import rodhaoneImg from '../assets/rodhaone.png';
+import rodhatwoImg from '../assets/rodhatwo.png';
+import alharrisImg from '../assets/alharris.png';
+import rotiImg from '../assets/roti.png';
+import pakistanflourImg from '../assets/pakistanflour.png';
+import alsemolinaImg from '../assets/alsemolina.png';
+
 
 // --- Type definition for a product ---
 interface Product {
+    id: string; // Unique ID including brand
     name: string;
-    category: string;
     image: string;
     description: string;
-    packageOptions: string[];
+    features: string[];
 }
 
-const Products = () => {
-    // --- UPDATED Product Categories Data ---
-    const categories = [
-        { name: 'All Products', icon: Package },
-        { name: 'Grains & Flour', icon: Leaf },
-        { name: 'Rice Varieties', icon: Package },
-        { name: 'Beverages', icon: Droplet },
-        { name: 'Household Essentials', icon: Package },
-    ];
+// --- Brands Data ---
+const brands = [
+  { name: 'Al Fajar Al Sadiq', logo: fajarLogo, key: 'fajar' },
+  { name: 'IFFCO', logo: iffcoLogo, key: 'iffco' },
+  { name: 'Al Ghurair', logo: alghurairlogo, key: 'alghurair' },
+  { name: 'Grand Mills', logo: grandmillslogo, key: 'grandmills' },
+  { name: 'Al Ain Flour Mill', logo: alainlogo, key: 'alignfloor' },
+  { name: 'Sounbula Mills', logo: sounlogo, key: 'sounbula' },
+];
 
-    // --- UPDATED Product Data with new descriptions and package options ---
-    const products: Product[] = [
-        {
-            name: 'Chakke Fresh Atta',
-            category: 'Grains & Flour',
-            image: 'https://github.com/alfajarsadiq/alfajarsadiq/blob/main/src/assets/pr1.webp?raw=true',
-            description: 'Stone-ground from the finest whole wheat grains, Chakke Fresh Atta is packed with fiber and nutrients. It produces exceptionally soft and fluffy rotis and chapatis every time.',
-            packageOptions: ['1kg', '5kg', '10kg']
-        },
-        {
-            name: 'Creamy Sella Rice',
-            category: 'Rice Varieties',
-            image: 'https://github.com/alfajarsadiq/alfajarsadiq/blob/main/src/assets/pr2.webp?raw=true',
-            description: 'A premium parboiled Basmati rice known for its long, non-sticky grains and creamy texture after cooking. Perfect for creating exquisite biryanis, pulao, and fried rice.',
-            packageOptions: ['1kg', '5kg', '20kg']
-        },
-        {
-            name: 'Namlet Goli Soda',
-            category: 'Beverages',
-            image: 'https://github.com/alfajarsadiq/alfajarsadiq/blob/main/src/assets/soda.webp?raw=true',
-            description: 'Experience the nostalgic fizz of classic Goli Soda. This refreshing, lemon-flavored carbonated drink is a timeless favorite for quenching thirst on a hot day.',
-            packageOptions: ['200ml Bottle', 'Pack of 6', 'Pack of 24']
-        },
-        {
-            name: 'Noora Basmati Rice',
-            category: 'Rice Varieties',
-            image: 'https://github.com/alfajarsadiq/alfajarsadiq/blob/main/src/assets/pr4.webp?raw=true',
-            description: 'Characterized by its delightful aroma and slender grains that elongate beautifully when cooked. Noora Basmati Rice is the choice for those who appreciate authentic, aromatic Indian cuisine.',
-            packageOptions: ['1kg', '5kg', '10kg']
-        },
-        {
-            name: 'Fajar Tandoori Maida',
-            category: 'Grains & Flour',
-            image: 'https://github.com/alfajarsadiq/alfajarsadiq/blob/main/src/assets/pr5.webp?raw=true',
-            description: 'Specially milled for high elasticity and fine texture, Fajar Tandoori Maida is the perfect all-purpose flour for making fluffy naans, bhaturas, and delectable baked goods.',
-            packageOptions: ['500g', '1kg', '2kg']
-        },
-        {
-            name: 'Fajar Plastic Product',
-            category: 'Household Essentials',
-            image: 'https://github.com/alfajarsadiq/alfajarsadiq/blob/main/src/assets/pr6.webp?raw=true',
-            description: 'A range of high-quality, durable, and food-safe plastic containers. Ideal for storing grains, spices, and leftovers, keeping your kitchen organized and your food fresh.',
-            packageOptions: ['Small Container', 'Medium Set', 'Large Jar']
-        },
-    ];
-
-    const [activeCategory, setActiveCategory] = useState('All Products');
-    const [searchTerm, setSearchTerm] = useState('');
-    const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
-
-    const filteredProducts = products.filter(product => {
-        const matchesCategory = activeCategory === 'All Products' || product.category === activeCategory;
-        const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase());
-        return matchesCategory && matchesSearch;
-    });
-
-    // --- Carousel State and Data ---
-    const [currentIndex, setCurrentIndex] = useState(0);
-
-    const heroSlides = [
-        {
-            image: productImg,
-            title: 'Freshness in Every Grain',
-            subtitle: 'Sourced from the finest fields to your table.'
-        },
-        {
-            image: productImg2,
-            title: 'The Heart of Every Kitchen',
-            subtitle: 'Discover ingredients that inspire culinary excellence.'
-        }
-    ];
-
-    const paginate = (newDirection: number) => {
-        setCurrentIndex((prevIndex) => {
-            const nextIndex = prevIndex + newDirection;
-            if (nextIndex < 0) return heroSlides.length - 1;
-            if (nextIndex >= heroSlides.length) return 0;
-            return nextIndex;
-        });
-    };
+// --- All Products Data ---
+const allProducts: Product[] = [
+    // Al Fajar Products
+    { id: 'fajar-chakke-atta', name: 'Chakke Fresh Atta', image: fajarChakkeAtta, description: 'Stone-ground from the finest whole wheat grains, Chakke Fresh Atta is packed with fiber and nutrients. It produces exceptionally soft and fluffy rotis and chapatis every time.', features: ['100% Whole Wheat', 'Rich in Fiber', 'Stone-Ground', 'For Soft Rotis'] },
+    { id: 'fajar-tandoori-maida', name: 'Fajar Tandoori Maida', image: fajarTandooriMaida, description: 'Specially milled for high elasticity and fine texture, our Tandoori Maida is the perfect all-purpose flour for making fluffy naans, bhaturas, and delectable baked goods.', features: ['Fine All-Purpose Flour', 'High Elasticity', 'For Naans & Bhaturas', 'Excellent for Baking'] },
     
-    useEffect(() => {
-        const interval = setInterval(() => paginate(1), 5000);
-        return () => clearInterval(interval);
-    }, []);
+    // IFFCO Products
+    { id: 'iffco-pak-1', name: 'Pak 1 Wheat Flour', image: pakoneimg, description: 'Premium quality whole wheat atta, stone-ground to preserve its natural goodness.', features: ["Premium Whole Wheat", "Stone-Ground", "Natural Aroma", "Excellent for Flatbreads"] },
+    { id: 'iffco-pak-2', name: 'Pak 2 Wheat Flour', image: paktwoimg, description: 'Authentic stone-ground whole wheat flour, perfect for making soft and fluffy rotis.', features: ["Stone-Ground", "100% Whole Wheat", "High in Fiber", "For Soft Rotis"] },
+    { id: 'iffco-paratha-maida', name: 'Paratha Maida', image: parathaMaidaImg, description: 'Specially milled for creating flaky, layered parathas with a soft dough and perfect texture.', features: ["Ideal for Parathas", "Fine Refined Flour", "Soft Dough", "Ensures Flaky Layers"] },
+    { id: 'iffco-all-purpose', name: 'All Purpose Flour', image: iffcoAllPurposeImg, description: 'A versatile and reliable all-purpose flour from IFFCO, suitable for everyday cooking and baking.', features: ['Multi-Purpose Use', 'Reliable for Baking', 'Enriched Flour', 'For Everyday Cooking'] },
+    { id: 'iffco-classic-1', name: 'Classic Flour No. 1', image: classiconeimg, description: 'A superior quality all-purpose flour, finely milled for baking fluffy cakes and soft breads.', features: ["Superior Quality", "Fine & Silky Texture", "Excellent for Baking", "Consistent Performance"] },
+    
+    // Al Ghurair Products
+    { id: 'alghurair-jenan-maida', name: 'Jenan Maida No 1', image: jmaida, description: 'Fine, silky maida perfect for authentic sweets and specialty breads.', features: ["Fine & Silky", "For Sweets", "Specialty Breads", "Premium Quality"] },
+    { id: 'alghurair-jenan-atta', name: 'Jenan Atta No 2', image: jatta, description: 'A versatile, high-quality flour for all your baking and cooking needs.', features: ["All-Purpose", "Consistent Quality", "Ideal for Baking", "Fine Texture"] },
+    { id: 'alghurair-afghan-maida', name: 'Afghan Maida', image: almaidaimg, description: 'Fine, silky maida perfect for authentic Afghan sweets and specialty breads.', features: ["Fine & Silky", "For Afghan Sweets", "Specialty Breads", "Premium Quality"] },
+    { id: 'alghurair-afghan-atta', name: 'Afghan Atta', image: alafghanimg, description: 'Traditional Afghan whole wheat flour for making authentic, flavorful flatbreads.', features: ["Authentic Afghan Style", "Whole Wheat", "Rich Flavor", "Perfect for Naan"] },
+    { id: 'alghurair-rawan-maida', name: 'Rawan Maida', image: rawanimg, description: 'A premium, pure refined flour known for its exceptional quality and baking performance.', features: ["Premium & Pure", "Fine Texture", "Excellent for Baking", "Consistent Results"] },
+    { id: 'alghurair-rawan-atta', name: 'Rawan Atta', image: rawanpureimg, description: 'A premium, pure flour known for its exceptional quality and baking performance.', features: ["Premium & Pure", "Excellent for Baking", "Consistent Results", "High Quality"] },
+    { id: 'alghurair-rodha-1', name: 'Rodha 1', image: rodhaoneImg, description: 'Premium quality flour, ideal for traditional bread making and daily culinary needs.', features: ["Premium Quality", "For Traditional Breads", "Versatile Use", "Consistent Results"] },
+    { id: 'alghurair-rodha-2', name: 'Rodha 2', image: rodhatwoImg, description: 'A finer grade flour perfect for delicate pastries and specialized baking applications.', features: ["Fine Grade", "For Pastries & Cakes", "Silky Texture", "Excellent Performance"] },
+    { id: 'alghurair-paratha-maida', name: 'Paratha Maida', image: alparathaimg, description: 'The perfect choice for deliciously flaky and layered parathas every time.', features: ["For Layered Parathas", "Fine Texture", "Easy to Knead", "Authentic Taste"] },
+    { id: 'alghurair-harris', name: 'Harris', image: alharrisImg, description: 'Coarsely ground wheat for the traditional, hearty dish of Harees.', features: ["Coarsely Ground", "For Traditional Harees", "Nutritious & Hearty", "Authentic Texture"] },
+    { id: 'alghurair-roti-flour', name: 'Roti Flour', image: rotiImg, description: 'Specially milled for soft, fluffy rotis that stay fresh for longer.', features: ["For Soft Rotis", "Easy to Knead", "Wholesome Goodness", "Stays Fresh Longer"] },
+    { id: 'alghurair-pakistan-flour', name: 'Pakistan Flour', image: pakistanflourImg, description: 'A versatile flour ideal for making traditional Pakistani breads and snacks.', features: ["For Pakistani Cuisine", "Versatile Use", "Authentic Taste", "Great for Breads & Snacks"] },
+    { id: 'alghurair-semolina-fine', name: 'Semolina Fine', image: alsemolinaImg, description: 'Fine semolina for smooth pasta, delicate desserts, and light coatings.', features: ["Fine Grade", "For Pasta & Desserts", "Smooth Texture", "High in Protein"] },
+    { id: 'alghurair-zein-flour', name: 'Zein Flour', image: zeinImg, description: 'A specialty corn-based protein flour, ideal for gluten-free baking and creating edible food coatings.', features: ["Gluten-Free", "High in Protein", "Corn-Based", "Edible Food Coatings"] },
 
-    const slideVariants = {
-        enter: { opacity: 0, scale: 1.1 },
-        center: { zIndex: 1, opacity: 1, scale: 1 },
-        exit: { zIndex: 0, opacity: 0, scale: 1.05 }
+    // Grand Mills Products
+    { id: 'grandmills-flour-no1', name: 'Flour No. 1', image: flourn1Img, description: 'A premium, high-quality patent flour perfect for making fine breads, cakes, and pastries.', features: ["Premium Patent Flour", "Fine Breads & Cakes", "Superior White Texture", "High Quality"] },
+    { id: 'grandmills-chappati-atta', name: 'Chappati Atta', image: flourn2Img, description: 'An excellent quality atta milled to produce exceptionally soft and delicious chapatis.', features: ["Fine Milled Atta", "For Soft Chapatis", "Easy to Knead", "Wholesome Goodness"] },
+    { id: 'grandmills-malabar-maida', name: 'Grandmills Paratha Maida', image: malabarImg, description: 'The secret to perfect, flaky Malabar parottas. Formulated for high elasticity.', features: ["Specialty Paratha Flour", "For Flaky Layers", "High Elasticity", "Authentic Malabar Style"] },
+    { id: 'grandmills-all-baking', name: 'All Baking Flour', image: allbakingImg, description: 'Your go-to flour for all baking adventures. Perfectly balanced for cakes, cookies, and muffins.', features: ["Versatile Baking Flour", "For Cakes & Cookies", "Consistent Results", "Enriched & Pre-sifted"] },
+    { id: 'grandmills-chakki-atta', name: 'Chakki Fresh Atta', image: flourn3Img, description: 'Authentic stone-ground whole wheat flour that locks in natural dietary fiber and aroma.', features: ["Authentic Chakki Fresh", "100% Whole Wheat", "High in Fiber", "For Fluffy Rotis"] },
+    { id: 'grandmills-pashtun-flour', name: 'Pashtun Flour', image: pashtunimg, description: 'A high-quality, fine Pashtun-style flour, perfect for creating authentic, soft traditional breads.', features: ["Authentic Pashtun Style", "Premium No. 1 Grade", "Ideal for Naan", "Fine, Soft Texture"] },
+    { id: 'grandmills-harees-wheat', name: 'Harees', image: hareeswheatImg, description: 'Premium quality crushed wheat, perfect for preparing the traditional dish, Harees.', features: ["Premium Crushed Wheat", "Ideal for Harees", "Nutritious & Hearty", "Authentic Recipe"] },
+    
+    // Placeholder products for new brands
+    { id: 'alignfloor-special-atta', name: 'Special Atta', image: fajarChakkeAtta, description: 'A high-quality atta from Al Ain Flour Mill for daily use.', features: ['Daily Use', 'Nutrient Rich'] },
+    { id: 'sounbula-golden-wheat', name: 'Golden Wheat Flour', image: flourn1Img, description: 'Premium flour from Sounbula Mills, perfect for baking.', features: ['Premium Quality', 'Baking Specialist'] },
+];
+
+
+const Products = () => {
+    const [selectedBrand, setSelectedBrand] = useState<string | null>(null);
+    const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+    const productSectionRef = useRef<HTMLDivElement>(null);
+
+    const handleBrandSelect = (brandKey: string) => {
+        setSelectedBrand(brandKey);
     };
+
+    const handleGoBack = () => {
+        setSelectedBrand(null);
+        productSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+    };
+
+    const filteredProducts = selectedBrand
+        ? allProducts.filter(p => p.id.startsWith(selectedBrand))
+        : [];
+  
+    const currentBrand = brands.find(b => b.key === selectedBrand);
 
     return (
         <div
@@ -126,147 +137,94 @@ const Products = () => {
                 backgroundColor: '#FAFAFA'
             }}
         >
-            {/* --- Hero Carousel Section --- */}
-            <section className="relative h-screen overflow-hidden shadow-2xl rounded-b-[4rem]">
-                <AnimatePresence initial={false}>
-                    <motion.div
-                        key={currentIndex}
-                        variants={slideVariants}
-                        initial="enter"
-                        animate="center"
-                        exit="exit"
-                        transition={{
-                            opacity: { duration: 1.2, ease: [0.4, 0, 0.2, 1] },
-                            scale: { duration: 1.2, ease: [0.4, 0, 0.2, 1] }
-                        }}
-                        className="absolute inset-0 w-full h-full bg-cover bg-center"
-                        style={{ backgroundImage: `url(${heroSlides[currentIndex].image})` }}
-                    >
-                         <div className="absolute inset-0 bg-black/50 flex items-center justify-center text-center">
-                            <div className="text-white px-4">
-                                <motion.h1 className="font-carsole text-5xl sm:text-6xl md:text-7xl font-bold mb-6" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}>
-                                    {heroSlides[currentIndex].title}
-                                </motion.h1>
-                                <motion.p className="text-xl sm:text-2xl max-w-3xl mx-auto mb-8 text-gray-300" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }}>
-                                    {heroSlides[currentIndex].subtitle}
-                                </motion.p>
-                            </div>
-                        </div>
-                    </motion.div>
-                </AnimatePresence>
-                
-                <div className="absolute top-1/2 left-4 md:left-8 transform -translate-y-1/2 z-20">
-                    <button onClick={() => paginate(-1)} className="p-2 rounded-full bg-white/20 text-white hover:bg-white/40 transition-colors duration-300 backdrop-blur-sm">
-                        <ChevronLeft className="w-6 h-6 md:w-8 md:h-8" />
-                    </button>
-                </div>
-                
-                <div className="absolute top-1/2 right-4 md:right-8 transform -translate-y-1/2 z-20">
-                    <button onClick={() => paginate(1)} className="p-2 rounded-full bg-white/20 text-white hover:bg-white/40 transition-colors duration-300 backdrop-blur-sm">
-                        <ChevronRight className="w-6 h-6 md:w-8 md:h-8" />
-                    </button>
-                </div>
+            <ProductHero />
 
-                <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20 flex space-x-3">
-                    {heroSlides.map((_, index) => (
-                        <button key={index} onClick={() => setCurrentIndex(index)} className={`w-3 h-3 rounded-full transition-all duration-300 ${ currentIndex === index ? 'bg-white scale-125' : 'bg-white/50' }`} />
-                    ))}
-                </div>
-            </section>
-
-            {/* --- Products Section --- */}
-            <section className="py-20 sm:py-24">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex flex-col items-center gap-8 mb-16">
-                        <div className="relative w-full max-w-md">
-                            <div className="absolute inset-y-0 left-0 flex items-center pl-6 pointer-events-none z-10">
-                                <Search className="text-gray-500" />
-                            </div>
-                            <input
-                                type="text"
-                                placeholder="Search products..."
-                                value={searchTerm}
-                                onChange={(e) => setSearchTerm(e.target.value)}
-                                className="w-full pl-14 pr-6 py-4 rounded-full bg-white/40 backdrop-blur-md shadow-lg border border-white/20 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#C6A664] transition-all duration-300"
-                            />
-                        </div>
-
-                        <div className="flex flex-wrap justify-center gap-4">
-                            {categories.map(category => {
-                                const isActive = activeCategory === category.name;
-                                return (
-                                    <button
-                                        key={category.name}
-                                        onClick={() => setActiveCategory(category.name)}
-                                        className={`relative flex items-center gap-3 px-6 py-3 rounded-full font-semibold transition-all duration-300 ease-in-out overflow-hidden group shadow-md
-                                        ${ isActive
-                                            ? 'bg-[#234E70] text-white'
-                                            : 'bg-white/40 backdrop-blur-md text-gray-700 hover:text-white'
-                                        }`}
-                                    >
-                                        <div className="absolute inset-0 bg-gradient-to-r from-[#234E70] to-[#C6A664] opacity-0 group-hover:opacity-100 transition-opacity duration-300"/>
-                                        <div className="relative z-10 flex items-center gap-3">
-                                            <category.icon className={`w-5 h-5 transition-colors duration-300 ${isActive ? 'text-[#C6A664]' : ''}`} />
-                                            {category.name}
-                                        </div>
-                                    </button>
-                                );
-                            })}
-                        </div>
+            <div ref={productSectionRef} className="py-20 sm:py-24">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                {!selectedBrand ? (
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <div className="text-center mb-16">
+                      <h2 className="font-trusted text-3xl sm:text-4xl font-bold mb-6 text-[#234E70]">Our Family of Brands</h2>
+                      <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Explore our diverse range of products from trusted brands, each committed to quality and excellence.
+                      </p>
                     </div>
-                    
-                    {/* --- Product Grid with Horizontal Cards --- */}
-                    <motion.div layout className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-                        <AnimatePresence>
-                            {filteredProducts.map((product) => (
-                                <motion.div
-                                    key={product.name}
-                                    layout
-                                    initial={{ opacity: 0, scale: 0.8 }}
-                                    animate={{ opacity: 1, scale: 1 }}
-                                    exit={{ opacity: 0, scale: 0.8 }}
-                                    transition={{ duration: 0.4, type: 'spring' }}
-                                    className="group bg-white rounded-3xl overflow-hidden border border-gray-200 shadow-[0_6px_16px_rgba(0,0,0,0.08)] hover:shadow-xl hover:translate-y-1 transition-all duration-300 flex flex-row h-48"
+                    {/* Adjusted grid for a balanced 2x3 layout */}
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                      {brands.map((brand) => (
+                        <motion.div
+                          key={brand.key}
+                          onClick={() => handleBrandSelect(brand.key)}
+                          className="group cursor-pointer"
+                          whileHover="hovered"
+                        >
+                          <div className="bg-white/80 backdrop-blur rounded-xl shadow-md group-hover:shadow-xl transition-shadow duration-300 h-full flex flex-col justify-between aspect-square border border-gray-200/80">
+                            <div className="p-6 flex-grow flex flex-col items-center justify-center">
+                                <img src={brand.logo} alt={`${brand.name} logo`} className="h-20 md:h-24 object-contain" />
+                            </div>
+                            <div className="flex items-center justify-between p-4 border-t border-gray-200/80">
+                                <h3 className="text-md font-semibold text-[#234E70]">{brand.name}</h3>
+                                <motion.div 
+                                    className="h-10 w-10 flex-shrink-0 rounded-full border border-gray-300 flex items-center justify-center text-neutral-500 transition-colors duration-300 group-hover:bg-[#234E70] group-hover:text-white"
+                                    variants={{ rest: { rotate: 0 }, hovered: { rotate: 45 } }}
+                                    transition={{ duration: 0.3 }}
                                 >
-                                    {/* Image container (Left side) - fixed width */}
-                                    <div className="flex-shrink-0 w-48 h-full overflow-hidden">
-                                        <img
-                                            src={product.image}
-                                            alt={product.name}
-                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                                        />
-                                    </div>
-
-                                    {/* Content container (Right side) - flexible width - ALIGNMENT FIX APPLIED HERE */}
-                                    <div className="p-5 pb-14 relative flex-grow">
-                                        {/* Text content */}
-                                        <div>
-                                            <h3 className="text-lg font-bold text-[#234E70] mb-1">
-                                                {product.name}
-                                            </h3>
-                                            <p className="text-sm font-medium text-gray-500">
-                                                {product.category}
-                                            </p>
-                                        </div>
-
-                                        {/* Button container - Absolutely positioned for consistent alignment */}
-                                        <div className="absolute bottom-5 right-5">
-                                            <button
-                                                onClick={() => setSelectedProduct(product)}
-                                                className="px-5 h-9 rounded-full bg-[#234E70] text-white text-xs font-bold uppercase hover:bg-[#C6A664] hover:text-black transition-colors duration-300 shadow-[0_4px_10px_rgba(35,78,112,0.3)] flex items-center"
-                                            >
-                                                Inquiry
-                                            </button>
-                                        </div>
-                                    </div>
+                                    <ArrowUpRight className="h-5 w-5" />
                                 </motion.div>
-                            ))}
-                        </AnimatePresence>
-                    </motion.div>
-                </div>
-            </section>
+                            </div>
+                          </div>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key={selectedBrand}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                     <button 
+                        onClick={handleGoBack} 
+                        className="flex items-center gap-2 mb-10 text-lg font-semibold text-gray-700 hover:text-gray-900 transition-colors"
+                      >
+                        <ArrowLeft size={20} />
+                        Back to Brands
+                     </button>
 
-            {/* --- Premium Product Modal --- */}
+                     {currentBrand && (
+                        <StickyProductShowcase
+                          title={`${currentBrand.name} Products`}
+                          subtitle={`Our selection of premium products from ${currentBrand.name}.`}
+                          products={filteredProducts}
+                          imagePosition="right"
+                          onEnquiry={(productName) => {
+                            const product = allProducts.find(p => p.name === productName);
+                            if (product) setSelectedProduct(product);
+                          }}
+                        />
+                     )}
+
+                    <div className="mt-20 text-center">
+                        <motion.button
+                            onClick={handleGoBack}
+                            className="inline-flex items-center gap-3 px-8 py-3 bg-[#234E70] text-white rounded-full font-semibold shadow-lg"
+                            whileHover={{ scale: 1.05, boxShadow: "0px 10px 20px rgba(0,0,0,0.15)" }}
+                            whileTap={{ scale: 0.95 }}
+                        >
+                            <ChevronLeft size={20} />
+                            View Other Brands
+                        </motion.button>
+                    </div>
+                  </motion.div>
+                )}
+              </div>
+            </div>
+
             <AnimatePresence>
                 {selectedProduct && (
                     <motion.div
@@ -287,26 +245,14 @@ const Products = () => {
                             <div className="md:rounded-l-2xl overflow-hidden">
                                 <img src={selectedProduct.image} alt={selectedProduct.name} className="w-full h-full object-cover"/>
                             </div>
-
                             <div className="p-8 flex flex-col">
                                 <h2 className="text-3xl font-bold text-[#C6A664] mb-4">{selectedProduct.name}</h2>
                                 <p className="text-gray-300 mb-6 flex-grow">{selectedProduct.description}</p>
                                 
-                                <div className="mb-6">
-                                    <h4 className="font-semibold text-gray-400 mb-3">Package Options:</h4>
-                                    <div className="flex flex-wrap gap-3">
-                                        {selectedProduct.packageOptions.map(option => (
-                                            <button key={option} className="px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg hover:bg-[#C6A664] hover:text-black transition-colors duration-200">
-                                                {option}
-                                            </button>
-                                        ))}
-                                    </div>
-                                </div>
                                 <button className="w-full mt-auto bg-[#C6A664] text-black font-bold py-3 rounded-lg hover:bg-opacity-90 transition-all duration-300 shadow-[0_4px_14px_0_rgba(198,166,100,0.39)]">
                                     Request Quote
                                 </button>
                             </div>
-
                              <button onClick={() => setSelectedProduct(null)} className="absolute top-4 right-4 p-2 rounded-full bg-black/50 text-gray-300 hover:text-white hover:bg-black/80 transition-all duration-200">
                                 <X size={20} />
                             </button>
@@ -318,7 +264,4 @@ const Products = () => {
     );
 };
 
-
 export default Products;
-
-
