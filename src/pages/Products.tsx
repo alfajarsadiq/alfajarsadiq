@@ -16,7 +16,6 @@ import alghurairlogo from '../assets/alghurairlogo.png';
 // import alainlogo from '../assets/alain.png';
 
 // --- PRODUCT IMAGE IMPORTS ---
-// import hareeswheatImg from '../assets/hareeswheat.png';
 // import parathaMaidaImg from '../assets/parathamaida.png';
 // import iffcoAllPurposeImg from '../assets/allpurpose.png';
 // import flourn1Img from '../assets/flourn1.png';
@@ -264,3 +263,4 @@ const Products = () => {
 };
 
 export default Products;
+
