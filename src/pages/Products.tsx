@@ -8,34 +8,34 @@ import StickyProductShowcase from '../components/StickyProductShowcase';
 
 // --- BRAND LOGO & ASSET IMPORTS ---
 import textureBg from '../assets/texture.webp';
-import fajarLogo from '../assets/logo.png';
-import iffcoLogo from '../assets/iffcologo.png';
+// import fajarLogo from '../assets/logo.png';
+// import iffcoLogo from '../assets/iffcologo.png';
 import alghurairlogo from '../assets/alghurairlogo.png';
-import grandmillslogo from '../assets/grandlogo.png';
-import sounlogo from '../assets/sounlogo.png';
-import alainlogo from '../assets/alain.png';
+// import grandmillslogo from '../assets/grandlogo.png';
+// import sounlogo from '../assets/sounlogo.png';
+// import alainlogo from '../assets/alain.png';
 
 // --- PRODUCT IMAGE IMPORTS ---
 // import hareeswheatImg from '../assets/hareeswheat.png';
-import parathaMaidaImg from '../assets/parathamaida.png';
-import iffcoAllPurposeImg from '../assets/allpurpose.png';
-import flourn1Img from '../assets/flourn1.png';
-import flourn2Img from '../assets/flourn2.png';
-import malabarImg from '../assets/malabar.png';
-import allbakingImg from '../assets/allbaking.png';
-import flourn3Img from '../assets/flourn3.png';
-import pashtunimg from '../assets/pashtun.png';
-import paktwoimg from '../assets/pak2.png';
-import pakoneimg from '../assets/pak1.png';
-import classiconeimg from '../assets/classic1.png';
+// import parathaMaidaImg from '../assets/parathamaida.png';
+// import iffcoAllPurposeImg from '../assets/allpurpose.png';
+// import flourn1Img from '../assets/flourn1.png';
+// import flourn2Img from '../assets/flourn2.png';
+// import malabarImg from '../assets/malabar.png';
+// import allbakingImg from '../assets/allbaking.png';
+// import flourn3Img from '../assets/flourn3.png';
+// import pashtunimg from '../assets/pashtun.png';
+// import paktwoimg from '../assets/pak2.png';
+// import pakoneimg from '../assets/pak1.png';
+// import classiconeimg from '../assets/classic1.png';
 import alparathaimg from '../assets/alparatha.png';
 import alafghanimg from '../assets/alafghan.png';
 import jatta from '../assets/jatta.png';
 import almaidaimg from '../assets/almaida.png';
 import rawanpureimg from '../assets/rawanpure.png';
 import rawanimg from '../assets/rawan.png';
-import fajarChakkeAtta from '../assets/pr1.webp';
-import fajarTandooriMaida from '../assets/pr5.webp';
+// import fajarChakkeAtta from '../assets/pr1.webp';
+// import fajarTandooriMaida from '../assets/pr5.webp';
 import jmaida from '../assets/jmaida.png';
 import zeinImg from '../assets/zein.png';
 import rodhaoneImg from '../assets/rodhaone.png';
@@ -55,28 +55,28 @@ interface Product {
     features: string[];
 }
 
-// --- Brands Data ---
+// --- Brands Data (Updated to only show Al Ghurair) ---
 const brands = [
-  { name: 'Al Fajar Al Sadiq', logo: fajarLogo, key: 'fajar' },
-  { name: 'IFFCO', logo: iffcoLogo, key: 'iffco' },
+  // { name: 'Al Fajar Al Sadiq', logo: fajarLogo, key: 'fajar' },
+  // { name: 'IFFCO', logo: iffcoLogo, key: 'iffco' },
   { name: 'Al Ghurair', logo: alghurairlogo, key: 'alghurair' },
-  { name: 'Grand Mills', logo: grandmillslogo, key: 'grandmills' },
-  { name: 'Al Ain Flour Mill', logo: alainlogo, key: 'alignfloor' },
-  { name: 'Sounbula Mills', logo: sounlogo, key: 'sounbula' },
+  // { name: 'Grand Mills', logo: grandmillslogo, key: 'grandmills' },
+  // { name: 'Al Ain Flour Mill', logo: alainlogo, key: 'alignfloor' },
+  // { name: 'Sounbula Mills', logo: sounlogo, key: 'sounbula' },
 ];
 
-// --- All Products Data ---
+// --- All Products Data (Updated to only include Al Ghurair products) ---
 const allProducts: Product[] = [
-    // Al Fajar Products
-    { id: 'fajar-chakke-atta', name: 'Chakke Fresh Atta', image: fajarChakkeAtta, description: 'Stone-ground from the finest whole wheat grains, Chakke Fresh Atta is packed with fiber and nutrients. It produces exceptionally soft and fluffy rotis and chapatis every time.', features: ['100% Whole Wheat', 'Rich in Fiber', 'Stone-Ground', 'For Soft Rotis'] },
-    { id: 'fajar-tandoori-maida', name: 'Fajar Tandoori Maida', image: fajarTandooriMaida, description: 'Specially milled for high elasticity and fine texture, our Tandoori Maida is the perfect all-purpose flour for making fluffy naans, bhaturas, and delectable baked goods.', features: ['Fine All-Purpose Flour', 'High Elasticity', 'For Naans & Bhaturas', 'Excellent for Baking'] },
+    // Al Fajar Products (Commented out)
+    // { id: 'fajar-chakke-atta', name: 'Chakke Fresh Atta', image: fajarChakkeAtta, description: 'Stone-ground from the finest whole wheat grains, Chakke Fresh Atta is packed with fiber and nutrients. It produces exceptionally soft and fluffy rotis and chapatis every time.', features: ['100% Whole Wheat', 'Rich in Fiber', 'Stone-Ground', 'For Soft Rotis'] },
+    // { id: 'fajar-tandoori-maida', name: 'Fajar Tandoori Maida', image: fajarTandooriMaida, description: 'Specially milled for high elasticity and fine texture, our Tandoori Maida is the perfect all-purpose flour for making fluffy naans, bhaturas, and delectable baked goods.', features: ['Fine All-Purpose Flour', 'High Elasticity', 'For Naans & Bhaturas', 'Excellent for Baking'] },
     
-    // IFFCO Products
-    { id: 'iffco-pak-1', name: 'Pak 1 Wheat Flour', image: pakoneimg, description: 'Premium quality whole wheat atta, stone-ground to preserve its natural goodness.', features: ["Premium Whole Wheat", "Stone-Ground", "Natural Aroma", "Excellent for Flatbreads"] },
-    { id: 'iffco-pak-2', name: 'Pak 2 Wheat Flour', image: paktwoimg, description: 'Authentic stone-ground whole wheat flour, perfect for making soft and fluffy rotis.', features: ["Stone-Ground", "100% Whole Wheat", "High in Fiber", "For Soft Rotis"] },
-    { id: 'iffco-paratha-maida', name: 'Paratha Maida', image: parathaMaidaImg, description: 'Specially milled for creating flaky, layered parathas with a soft dough and perfect texture.', features: ["Ideal for Parathas", "Fine Refined Flour", "Soft Dough", "Ensures Flaky Layers"] },
-    { id: 'iffco-all-purpose', name: 'All Purpose Flour', image: iffcoAllPurposeImg, description: 'A versatile and reliable all-purpose flour from IFFCO, suitable for everyday cooking and baking.', features: ['Multi-Purpose Use', 'Reliable for Baking', 'Enriched Flour', 'For Everyday Cooking'] },
-    { id: 'iffco-classic-1', name: 'Classic Flour No. 1', image: classiconeimg, description: 'A superior quality all-purpose flour, finely milled for baking fluffy cakes and soft breads.', features: ["Superior Quality", "Fine & Silky Texture", "Excellent for Baking", "Consistent Performance"] },
+    // IFFCO Products (Commented out)
+    // { id: 'iffco-pak-1', name: 'Pak 1 Wheat Flour', image: pakoneimg, description: 'Premium quality whole wheat atta, stone-ground to preserve its natural goodness.', features: ["Premium Whole Wheat", "Stone-Ground", "Natural Aroma", "Excellent for Flatbreads"] },
+    // { id: 'iffco-pak-2', name: 'Pak 2 Wheat Flour', image: paktwoimg, description: 'Authentic stone-ground whole wheat flour, perfect for making soft and fluffy rotis.', features: ["Stone-Ground", "100% Whole Wheat", "High in Fiber", "For Soft Rotis"] },
+    // { id: 'iffco-paratha-maida', name: 'Paratha Maida', image: parathaMaidaImg, description: 'Specially milled for creating flaky, layered parathas with a soft dough and perfect texture.', features: ["Ideal for Parathas", "Fine Refined Flour", "Soft Dough", "Ensures Flaky Layers"] },
+    // { id: 'iffco-all-purpose', name: 'All Purpose Flour', image: iffcoAllPurposeImg, description: 'A versatile and reliable all-purpose flour from IFFCO, suitable for everyday cooking and baking.', features: ['Multi-Purpose Use', 'Reliable for Baking', 'Enriched Flour', 'For Everyday Cooking'] },
+    // { id: 'iffco-classic-1', name: 'Classic Flour No. 1', image: classiconeimg, description: 'A superior quality all-purpose flour, finely milled for baking fluffy cakes and soft breads.', features: ["Superior Quality", "Fine & Silky Texture", "Excellent for Baking", "Consistent Performance"] },
     
     // Al Ghurair Products
     { id: 'alghurair-jenan-maida', name: 'Jenan Maida No 1', image: jmaida, description: 'Fine, silky maida perfect for authentic sweets and specialty breads.', features: ["Fine & Silky", "For Sweets", "Specialty Breads", "Premium Quality"] },
@@ -94,18 +94,18 @@ const allProducts: Product[] = [
     { id: 'alghurair-semolina-fine', name: 'Semolina Fine', image: alsemolinaImg, description: 'Fine semolina for smooth pasta, delicate desserts, and light coatings.', features: ["Fine Grade", "For Pasta & Desserts", "Smooth Texture", "High in Protein"] },
     { id: 'alghurair-zein-flour', name: 'Zein Flour', image: zeinImg, description: 'A specialty corn-based protein flour, ideal for gluten-free baking and creating edible food coatings.', features: ["Gluten-Free", "High in Protein", "Corn-Based", "Edible Food Coatings"] },
 
-    // Grand Mills Products
-    { id: 'grandmills-flour-no1', name: 'Flour No. 1', image: flourn1Img, description: 'A premium, high-quality patent flour perfect for making fine breads, cakes, and pastries.', features: ["Premium Patent Flour", "Fine Breads & Cakes", "Superior White Texture", "High Quality"] },
-    { id: 'grandmills-chappati-atta', name: 'Chappati Atta', image: flourn2Img, description: 'An excellent quality atta milled to produce exceptionally soft and delicious chapatis.', features: ["Fine Milled Atta", "For Soft Chapatis", "Easy to Knead", "Wholesome Goodness"] },
-    { id: 'grandmills-malabar-maida', name: 'Grandmills Paratha Maida', image: malabarImg, description: 'The secret to perfect, flaky Malabar parottas. Formulated for high elasticity.', features: ["Specialty Paratha Flour", "For Flaky Layers", "High Elasticity", "Authentic Malabar Style"] },
-    { id: 'grandmills-all-baking', name: 'All Baking Flour', image: allbakingImg, description: 'Your go-to flour for all baking adventures. Perfectly balanced for cakes, cookies, and muffins.', features: ["Versatile Baking Flour", "For Cakes & Cookies", "Consistent Results", "Enriched & Pre-sifted"] },
-    { id: 'grandmills-chakki-atta', name: 'Chakki Fresh Atta', image: flourn3Img, description: 'Authentic stone-ground whole wheat flour that locks in natural dietary fiber and aroma.', features: ["Authentic Chakki Fresh", "100% Whole Wheat", "High in Fiber", "For Fluffy Rotis"] },
-    { id: 'grandmills-pashtun-flour', name: 'Pashtun Flour', image: pashtunimg, description: 'A high-quality, fine Pashtun-style flour, perfect for creating authentic, soft traditional breads.', features: ["Authentic Pashtun Style", "Premium No. 1 Grade", "Ideal for Naan", "Fine, Soft Texture"] },
-    { id: 'grandmills-harees-wheat', name: 'Harees', image: hareeswheatImg, description: 'Premium quality crushed wheat, perfect for preparing the traditional dish, Harees.', features: ["Premium Crushed Wheat", "Ideal for Harees", "Nutritious & Hearty", "Authentic Recipe"] },
+    // Grand Mills Products (Commented out)
+    // { id: 'grandmills-flour-no1', name: 'Flour No. 1', image: flourn1Img, description: 'A premium, high-quality patent flour perfect for making fine breads, cakes, and pastries.', features: ["Premium Patent Flour", "Fine Breads & Cakes", "Superior White Texture", "High Quality"] },
+    // { id: 'grandmills-chappati-atta', name: 'Chappati Atta', image: flourn2Img, description: 'An excellent quality atta milled to produce exceptionally soft and delicious chapatis.', features: ["Fine Milled Atta", "For Soft Chapatis", "Easy to Knead", "Wholesome Goodness"] },
+    // { id: 'grandmills-malabar-maida', name: 'Grandmills Paratha Maida', image: malabarImg, description: 'The secret to perfect, flaky Malabar parottas. Formulated for high elasticity.', features: ["Specialty Paratha Flour", "For Flaky Layers", "High Elasticity", "Authentic Malabar Style"] },
+    // { id: 'grandmills-all-baking', name: 'All Baking Flour', image: allbakingImg, description: 'Your go-to flour for all baking adventures. Perfectly balanced for cakes, cookies, and muffins.', features: ["Versatile Baking Flour", "For Cakes & Cookies", "Consistent Results", "Enriched & Pre-sifted"] },
+    // { id: 'grandmills-chakki-atta', name: 'Chakki Fresh Atta', image: flourn3Img, description: 'Authentic stone-ground whole wheat flour that locks in natural dietary fiber and aroma.', features: ["Authentic Chakki Fresh", "100% Whole Wheat", "High in Fiber", "For Fluffy Rotis"] },
+    // { id: 'grandmills-pashtun-flour', name: 'Pashtun Flour', image: pashtunimg, description: 'A high-quality, fine Pashtun-style flour, perfect for creating authentic, soft traditional breads.', features: ["Authentic Pashtun Style", "Premium No. 1 Grade", "Ideal for Naan", "Fine, Soft Texture"] },
+    // { id: 'grandmills-harees-wheat', name: 'Harees', image: hareeswheatImg, description: 'Premium quality crushed wheat, perfect for preparing the traditional dish, Harees.', features: ["Premium Crushed Wheat", "Ideal for Harees", "Nutritious & Hearty", "Authentic Recipe"] },
     
-    // Placeholder products for new brands
-    { id: 'alignfloor-special-atta', name: 'Special Atta', image: fajarChakkeAtta, description: 'A high-quality atta from Al Ain Flour Mill for daily use.', features: ['Daily Use', 'Nutrient Rich'] },
-    { id: 'sounbula-golden-wheat', name: 'Golden Wheat Flour', image: flourn1Img, description: 'Premium flour from Sounbula Mills, perfect for baking.', features: ['Premium Quality', 'Baking Specialist'] },
+    // Placeholder products for new brands (Commented out)
+    // { id: 'alignfloor-special-atta', name: 'Special Atta', image: fajarChakkeAtta, description: 'A high-quality atta from Al Ain Flour Mill for daily use.', features: ['Daily Use', 'Nutrient Rich'] },
+    // { id: 'sounbula-golden-wheat', name: 'Golden Wheat Flour', image: flourn1Img, description: 'Premium flour from Sounbula Mills, perfect for baking.', features: ['Premium Quality', 'Baking Specialist'] },
 ];
 
 
@@ -153,7 +153,6 @@ const Products = () => {
                         Explore our diverse range of products from trusted brands, each committed to quality and excellence.
                       </p>
                     </div>
-                    {/* Adjusted grid for a balanced 2x3 layout */}
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                       {brands.map((brand) => (
                         <motion.div
@@ -265,4 +264,3 @@ const Products = () => {
 };
 
 export default Products;
-
