@@ -11,7 +11,7 @@ import textureBg from '../assets/texture.webp';
 // import fajarLogo from '../assets/logo.png';
 import iffcoLogo from '../assets/iffcologo.png';
 import alghurairlogo from '../assets/alghurairlogo.png';
-import grandmillslogo from '../assets/grandlogo.png';
+// import grandmillslogo from '../assets/grandlogo.png';
 // import sounlogo from '../assets/sounlogo.png';
 import alainlogo from '../assets/alain.png';
 
@@ -31,11 +31,20 @@ import rotiImg from '../assets/roti.png';
 import pakistanflourImg from '../assets/pakistanflour.png';
 import alsemolinaImg from '../assets/alsemolina.png';
 
-// --- NEW AL AIN PRODUCT IMPORTS ---
+// --- AL AIN PRODUCT IMPORTS ---
 import superimg from '../assets/super.png';
 import kbullimg from '../assets/kbull.png';
 import allpurposeimg from '../assets/allpurpos.png';
 import parathaimg from '../assets/paratha.png';
+
+// --- NEW IFFCO PRODUCT IMPORTS ---
+import pakoneimg from '../assets/pak1.png';
+import classiconeimg from '../assets/classic1.png';
+import classictwoimg from '../assets/classic2.png';
+import parathaMaidaImg from '../assets/parathamaida.png';
+import iffcoAllPurposeImg from '../assets/allpurpose.png';
+import paktwoimg from '../assets/pak2.png';
+import tazaimg from '../assets/taza.png';
 
 
 // --- Type definition for a product ---
@@ -47,23 +56,26 @@ interface Product {
     features: string[];
 }
 
-// --- Brands Data (Updated to only show Al Ghurair and Al Ain) ---
+// --- Brands Data (Updated to only show IFFCO, Al Ghurair, and Al Ain) ---
 const brands = [
   // { name: 'Al Fajar Al Sadiq', logo: fajarLogo, key: 'fajar' },
   { name: 'IFFCO', logo: iffcoLogo, key: 'iffco' },
   { name: 'Al Ghurair', logo: alghurairlogo, key: 'alghurair' },
-  { name: 'Grand Mills', logo: grandmillslogo, key: 'grandmills' },
+  // { name: 'Grand Mills', logo: grandmillslogo, key: 'grandmills' },
   { name: 'Al Ain Flour Mill', logo: alainlogo, key: 'alignfloor' },
   // { name: 'Sounbula Mills', logo: sounlogo, key: 'sounbula' },
 ];
 
-// --- All Products Data (Updated with new Al Ain products) ---
+// --- All Products Data (Updated with new IFFCO & Al Ain products) ---
 const allProducts: Product[] = [
-    // Al Fajar Products (Commented out)
-    // ...
-
-    // IFFCO Products (Commented out)
-    // ...
+    // --- NEW: IFFCO Products ---
+    { id: 'iffco-all-purpose-flour', name: 'All Purpose Wheat Flour', image: iffcoAllPurposeImg, description: 'A versatile and reliable all-purpose flour from IFFCO, suitable for everyday cooking and baking.', features: ["Multi-Purpose Use", "Reliable for Baking", "Enriched Flour", "Perfect for Everyday Cooking"] },
+    { id: 'iffco-chakki-atta-pak-2', name: 'Pak 2 Wheat Flour', image: paktwoimg, description: 'Authentic stone-ground whole wheat flour, perfect for making soft and fluffy rotis.', features: ["Stone-Ground", "100% Whole Wheat", "High in Fiber", "For Soft Rotis"] },
+    { id: 'iffco-taza-atta', name: 'Taza Flour', image: tazaimg, description: 'Freshly milled atta packed with nutrients, ideal for healthy and wholesome meals.', features: ["Freshly Milled", "Nutrient-Rich", "High in Dietary Fiber", "Perfect for Daily Cooking"] },
+    { id: 'iffco-chakki-atta-pak-1', name: 'Pak 1 Wheat Flour', image: pakoneimg, description: 'Premium quality whole wheat atta, stone-ground to preserve its natural goodness.', features: ["Premium Whole Wheat", "Stone-Ground Goodness", "Natural Aroma", "Excellent for Flatbreads"] },
+    { id: 'iffco-classic-flour-1', name: 'Classic Flour No. 1', image: classiconeimg, description: 'A superior quality all-purpose flour, finely milled for baking fluffy cakes and soft breads.', features: ["Superior All-Purpose Flour", "Fine & Silky Texture", "Excellent for Baking", "Consistent Performance"] },
+    { id: 'iffco-classic-flour-2', name: 'Classic Flour No. 2', image: classictwoimg, description: 'A versatile flour perfect for a wide range of culinary uses, from traditional breads to fried delicacies.', features: ["Versatile & Multi-purpose", "Ideal for Breads & Frying", "Consistent Quality", "Reliable Results"] },
+    { id: 'iffco-paratha-maida', name: 'Paratha Maida', image: parathaMaidaImg, description: 'Specially milled for creating flaky, layered parathas with a soft dough and perfect texture.', features: ["Ideal for Parathas", "Fine Refined Flour", "Soft Dough", "Ensures Flaky Layers"] },
     
     // Al Ghurair Products
     { id: 'alghurair-jenan-maida', name: 'Jenan Maida No 1', image: jmaida, description: 'Fine, silky maida perfect for authentic sweets and specialty breads.', features: ["Fine & Silky", "For Sweets", "Specialty Breads", "Premium Quality"] },
@@ -81,18 +93,11 @@ const allProducts: Product[] = [
     { id: 'alghurair-semolina-fine', name: 'Semolina Fine', image: alsemolinaImg, description: 'Fine semolina for smooth pasta, delicate desserts, and light coatings.', features: ["Fine Grade", "For Pasta & Desserts", "Smooth Texture", "High in Protein"] },
     { id: 'alghurair-zein-flour', name: 'Zein Flour', image: zeinImg, description: 'A specialty corn-based protein flour, ideal for gluten-free baking and creating edible food coatings.', features: ["Gluten-Free", "High in Protein", "Corn-Based", "Edible Food Coatings"] },
 
-    // --- NEW: Al Ain Flour Mill Products ---
+    // Al Ain Flour Mill Products
     { id: 'alignfloor-super-atta', name: 'Super Atta', image: superimg, description: 'A premium quality whole wheat atta, perfect for making soft and fluffy chapatis.', features: ["100% Whole Wheat", "Rich in Fiber", "Stone-Ground", "For Soft Rotis"] },
-    { id: 'alignfloor-kbull-maida', name: 'KBul1 Maida', image: kbullimg, description: 'A high-quality, all-purpose refined flour ideal for baking and traditional sweets.', features: ["All-Purpose Flour", "Fine & Silky Texture", "Excellent for Baking", "Premium Quality"] },
+    { id: 'alignfloor-kbull-maida', name: 'K Bull Maida', image: kbullimg, description: 'A high-quality, all-purpose refined flour ideal for baking and traditional sweets.', features: ["All-Purpose Flour", "Fine & Silky Texture", "Excellent for Baking", "Premium Quality"] },
     { id: 'alignfloor-all-purpose', name: 'All Purpose Flour', image: allpurposeimg, description: 'A versatile and reliable all-purpose flour from Al Ain, suitable for everyday cooking and baking needs.', features: ["Multi-Purpose Use", "Reliable for Baking", "Enriched Flour", "For Everyday Cooking"] },
     { id: 'alignfloor-paratha-maida', name: 'Paratha Maida', image: parathaimg, description: 'Specially milled flour for creating delicious, flaky, and layered parathas with a perfect texture.', features: ["Ideal for Parathas", "Fine Refined Flour", "Soft Dough", "Ensures Flaky Layers"] },
-
-
-    // Grand Mills Products (Commented out)
-    // ...
-    
-    // Sounbula Mills Products (Commented out)
-    // ...
 ];
 
 
@@ -251,4 +256,3 @@ const Products = () => {
 };
 
 export default Products;
-
