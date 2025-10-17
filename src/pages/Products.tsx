@@ -83,7 +83,7 @@ const allProducts: Product[] = [
 
     // --- NEW: Al Ain Flour Mill Products ---
     { id: 'alignfloor-super-atta', name: 'Super Atta', image: superimg, description: 'A premium quality whole wheat atta, perfect for making soft and fluffy chapatis.', features: ["100% Whole Wheat", "Rich in Fiber", "Stone-Ground", "For Soft Rotis"] },
-    { id: 'alignfloor-kbull-maida', name: 'K Bull Maida', image: kbullimg, description: 'A high-quality, all-purpose refined flour ideal for baking and traditional sweets.', features: ["All-Purpose Flour", "Fine & Silky Texture", "Excellent for Baking", "Premium Quality"] },
+    { id: 'alignfloor-kbull-maida', name: 'KBul1 Maida', image: kbullimg, description: 'A high-quality, all-purpose refined flour ideal for baking and traditional sweets.', features: ["All-Purpose Flour", "Fine & Silky Texture", "Excellent for Baking", "Premium Quality"] },
     { id: 'alignfloor-all-purpose', name: 'All Purpose Flour', image: allpurposeimg, description: 'A versatile and reliable all-purpose flour from Al Ain, suitable for everyday cooking and baking needs.', features: ["Multi-Purpose Use", "Reliable for Baking", "Enriched Flour", "For Everyday Cooking"] },
     { id: 'alignfloor-paratha-maida', name: 'Paratha Maida', image: parathaimg, description: 'Specially milled flour for creating delicious, flaky, and layered parathas with a perfect texture.', features: ["Ideal for Parathas", "Fine Refined Flour", "Soft Dough", "Ensures Flaky Layers"] },
 
@@ -251,3 +251,4 @@ const Products = () => {
 };
 
 export default Products;
+
