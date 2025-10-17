@@ -46,7 +46,7 @@ import iffcoAllPurposeImg from '../assets/allpurpose.png';
 import paktwoimg from '../assets/pak2.png';
 import tazaimg from '../assets/taza.png';
 
-// --- NEW GRAND MILLS PRODUCT IMPORTS ---
+// --- GRAND MILLS PRODUCT IMPORTS ---
 import hareeswheatImg from '../assets/hareeswheat.png';
 import flourn1Img from '../assets/flourn1.png';
 import flourn2Img from '../assets/flourn2.png';
@@ -76,7 +76,7 @@ const brands = [
   // { name: 'Sounbula Mills', logo: sounlogo, key: 'sounbula' },
 ];
 
-// --- All Products Data (Updated with Grand Mills products) ---
+// --- All Products Data (FIXED Grand Mills product IDs) ---
 const allProducts: Product[] = [
     // IFFCO Products
     { id: 'iffco-all-purpose-flour', name: 'All Purpose Wheat Flour', image: iffcoAllPurposeImg, description: 'A versatile and reliable all-purpose flour from IFFCO, suitable for everyday cooking and baking.', features: ["Multi-Purpose Use", "Reliable for Baking", "Enriched Flour", "Perfect for Everyday Cooking"] },
@@ -109,15 +109,15 @@ const allProducts: Product[] = [
     { id: 'alignfloor-all-purpose', name: 'All Purpose Flour', image: allpurposeimg, description: 'A versatile and reliable all-purpose flour from Al Ain, suitable for everyday cooking and baking needs.', features: ["Multi-Purpose Use", "Reliable for Baking", "Enriched Flour", "For Everyday Cooking"] },
     { id: 'alignfloor-paratha-maida', name: 'Paratha Maida', image: parathaimg, description: 'Specially milled flour for creating delicious, flaky, and layered parathas with a perfect texture.', features: ["Ideal for Parathas", "Fine Refined Flour", "Soft Dough", "Ensures Flaky Layers"] },
 
-    // --- NEW: Grand Mills Products ---
-    { id: 'GrandMills-harees-wheat', name: 'Harees Wheat', image: hareeswheatImg, description: 'Premium quality crushed wheat, perfect for preparing the traditional dish, Harees.', features: ["Premium Crushed Wheat", "Ideal for Harees", "Nutritious & Hearty", "Available in 40kg"] },
-    { id: 'GrandMills-flour-no1', name: 'Flour No. 1', image: flourn1Img, description: 'A premium, high-quality patent flour perfect for making fine breads, cakes, and pastries.', features: ["Premium Patent Flour", "Ideal for Fine Breads", "Perfect for Cakes & Pastries", "Superior White Texture"] },
-    { id: 'GrandMills-chappati-atta', name: 'Chappati Atta', image: flourn2Img, description: 'An excellent quality atta milled to produce exceptionally soft and delicious chapatis.', features: ["Fine Milled Atta", "For Soft Chapatis", "Easy to Knead", "Wholesome Goodness"] },
-    { id: 'GrandMills-malabar-paratha-maida', name: 'Malabar Paratha Maida', image: malabarImg, description: 'The secret to perfect, flaky Malabar parottas. Formulated for high elasticity.', features: ["Specialty Paratha Flour", "For Flaky Layers", "High Elasticity", "Authentic Malabar Style"] },
-    { id: 'GrandMills-all-baking-flour', name: 'All Baking Flour', image: allbakingImg, description: 'Your go-to flour for all baking adventures. Perfectly balanced for cakes, cookies, and muffins.', features: ["Versatile Baking Flour", "Perfect for Cakes & Cookies", "Consistent Results", "Enriched & Pre-sifted"] },
-    { id: 'GrandMills-semolina', name: 'Semolina', image: semolineImg, description: 'Coarsely ground durum wheat, ideal for making traditional pasta, couscous, and upma.', features: ["Coarse Durum Wheat", "Ideal for Pasta & Upma", "Used in Desserts", "Rich in Protein"] },
-    { id: 'GrandMills-chakki-atta', name: 'Chakki Atta', image: flourn3Img, description: 'Authentic stone-ground whole wheat flour that locks in natural dietary fiber and aroma.', features: ["Authentic Chakki Fresh", "100% Whole Wheat", "High in Fiber", "For Soft & Fluffy Rotis"] },
-    { id: 'GrandMills-pashtun-flour-n1', name: 'Pashtun Flour No. 1', image: pashtunimg, description: 'A high-quality, fine Pashtun-style flour, perfect for creating authentic, soft traditional breads.', features: ["Authentic Pashtun Style", "Premium No. 1 Grade", "Ideal for Naan & Roti", "Fine, Soft Texture"] }
+    // --- Grand Mills Products (IDs FIXED) ---
+    { id: 'grandmills-harees-wheat', name: 'Harees Wheat', image: hareeswheatImg, description: 'Premium quality crushed wheat, perfect for preparing the traditional dish, Harees.', features: ["Premium Crushed Wheat", "Ideal for Harees", "Nutritious & Hearty", "Available in 40kg"] },
+    { id: 'grandmills-flour-no1', name: 'Flour No. 1', image: flourn1Img, description: 'A premium, high-quality patent flour perfect for making fine breads, cakes, and pastries.', features: ["Premium Patent Flour", "Ideal for Fine Breads", "Perfect for Cakes & Pastries", "Superior White Texture"] },
+    { id: 'grandmills-chappati-atta', name: 'Chappati Atta', image: flourn2Img, description: 'An excellent quality atta milled to produce exceptionally soft and delicious chapatis.', features: ["Fine Milled Atta", "For Soft Chapatis", "Easy to Knead", "Wholesome Goodness"] },
+    { id: 'grandmills-malabar-paratha-maida', name: 'Malabar Paratha Maida', image: malabarImg, description: 'The secret to perfect, flaky Malabar parottas. Formulated for high elasticity.', features: ["Specialty Paratha Flour", "For Flaky Layers", "High Elasticity", "Authentic Malabar Style"] },
+    { id: 'grandmills-all-baking-flour', name: 'All Baking Flour', image: allbakingImg, description: 'Your go-to flour for all baking adventures. Perfectly balanced for cakes, cookies, and muffins.', features: ["Versatile Baking Flour", "Perfect for Cakes & Cookies", "Consistent Results", "Enriched & Pre-sifted"] },
+    { id: 'grandmills-semolina', name: 'Semolina', image: semolineImg, description: 'Coarsely ground durum wheat, ideal for making traditional pasta, couscous, and upma.', features: ["Coarse Durum Wheat", "Ideal for Pasta & Upma", "Used in Desserts", "Rich in Protein"] },
+    { id: 'grandmills-chakki-atta', name: 'Chakki Atta', image: flourn3Img, description: 'Authentic stone-ground whole wheat flour that locks in natural dietary fiber and aroma.', features: ["Authentic Chakki Fresh", "100% Whole Wheat", "High in Fiber", "For Soft & Fluffy Rotis"] },
+    { id: 'grandmills-pashtun-flour-n1', name: 'Pashtun Flour No. 1', image: pashtunimg, description: 'A high-quality, fine Pashtun-style flour, perfect for creating authentic, soft traditional breads.', features: ["Authentic Pashtun Style", "Premium No. 1 Grade", "Ideal for Naan & Roti", "Fine, Soft Texture"] }
 ];
 
 
