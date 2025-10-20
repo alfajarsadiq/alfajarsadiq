@@ -13,6 +13,8 @@ import alghurairLogo from '/src/assets/alghurairlogo.png';
 import grandLogo from '/src/assets/grandlogo.png';
 import amirLogo from '/src/assets/amirlogo.png';
 import khaleejLogo from '/src/assets/khaleejlogo.png';
+import sounbullogo from '../assets/sounlogo.png';
+import alainlogo from '../assets/alain.png';
 // import jenanLogo from '/src/assets/jenanlogo.png';
 
 // Brand Network Logos
@@ -152,6 +154,8 @@ const Home = () => {
     { name: 'Omani Gulf Food', logoUrl: amirLogo },
     { name: 'Al-Khaleej Sugar', logoUrl: khaleejLogo },
     { name: 'Ferrari Foods', logoUrl: ferrariLogo },
+    { name: 'Al Ain Flour Mills', logoUrl: sounbullogo },
+    { name: 'Sounbula Mills', logoUrl: alainlogo },
   ];
 
   const testimonials = [
