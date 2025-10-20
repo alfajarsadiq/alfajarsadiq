@@ -136,7 +136,7 @@ const Home = () => {
           { id: 'habibi', name: 'Habibi', logo: habibiLogo, url: '#' },
           // { id: 'safari-foods', name: 'Safari Foods', logo: safariLogo, url: '#' },
           { id: 'namlet', name: 'Namlet', logo: namletLogo, url: '#' },
-          { id: 'ferrari-foods', name: 'Ferrari Foods', logo: ferrariLogo, url: '#' },
+          // { id: 'ferrari-foods', name: 'Ferrari Foods', logo: ferrariLogo, url: '#' },
       ],
   };
 
