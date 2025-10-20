@@ -13,13 +13,16 @@ import alghurairLogo from '/src/assets/alghurairlogo.png';
 import grandLogo from '/src/assets/grandlogo.png';
 import amirLogo from '/src/assets/amirlogo.png';
 import khaleejLogo from '/src/assets/khaleejlogo.png';
-import jenanLogo from '/src/assets/jenanlogo.png';
+// --- NEW LOGOS ---
+import ferrariFoodsLogo from '/src/assets/ferrarilogo.png'; // Assuming ferrarifoods-ferrarilogo.png is named ferrarilogo.png
+import sounbulaLogo from '/src/assets/sounlogo.png';
+import alainLogo from '/src/assets/alain.png';
+
 
 // --- Funded Company logos ---
 import hostLogo from '/src/assets/logo.png';
 import habibiLogo from '/src/assets/habibilogo.png';
 import safariLogo from '/src/assets/safarilogo.png';
-import ferrariLogo from '/src/assets/ferrarilogo.png';
 import namletLogo from '/src/assets/namletlogo.png';
 
 // --- Event images ---
@@ -69,13 +72,30 @@ const Partners = () => {
       description: 'The world\'s largest port-based sugar refinery, located in Dubai. AL-Khaleej Sugar is a global leader in producing high-quality refined white sugar for international markets.',
       testimonial: 'Al-Fajar Sadiq\'s logistical prowess ensures that our refined sugar reaches every corner of the UAE market efficiently. They are a vital link in our regional supply chain.'
     },
+    // --- UPDATED SECTION ---
     {
-      name: 'Jenan',
-      logoUrl: jenanLogo,
-      industry: 'Healthy Foods & Grains',
-      partnershipYear: '2009',
-      description: 'A flagship brand of Al Ghurair Foods, Jenan is synonymous with healthy living, offering a premium range of oats, barley, and whole-wheat flour products trusted by families.',
-      testimonial: 'For a health-focused brand like Jenan, reliable distribution is key. Al-Fajar Sadiq ensures our products maintain their freshness from the mill to the shelf, every single time.'
+      name: 'Ferrari Foods',
+      logoUrl: ferrariFoodsLogo,
+      industry: 'Premium Pasta & Sauces',
+      partnershipYear: '2018', // Example year
+      description: 'Offering authentic Italian flavors, Ferrari Foods specializes in gourmet pasta and sauce products for the discerning consumer.',
+      testimonial: 'Al-Fajar Sadiq has been crucial in introducing our premium products to the UAE market, ensuring our brand is positioned correctly.'
+    },
+    {
+      name: 'Sounbula Mills',
+      logoUrl: sounbulaLogo,
+      industry: 'Grain & Flour Milling',
+      partnershipYear: '2019', // Example year
+      description: 'Sounbula Mills is a key supplier of high-quality grains and flours, committed to excellence and consistency in their products.',
+      testimonial: 'The synergy with Al-Fajar Sadiq has been remarkable. Their distribution excellence helps us serve the entire region effectively.'
+    },
+    {
+      name: 'Al Ain Flour Mills',
+      logoUrl: alainLogo,
+      industry: 'Flour Production',
+      partnershipYear: '2021', // Example year
+      description: 'A leading name in the UAE, Al Ain Flour Mills provides top-tier flour products essential for both commercial and home baking.',
+      testimonial: 'Partnering with Al-Fajar Sadiq was a strategic decision that paid off. Their extensive network is a perfect match for our production capabilities.'
     }
   ];
 
@@ -115,15 +135,6 @@ const Partners = () => {
       performanceMetric: 'Customer Acquisition',
       performanceValue: '+30K',
       Icon: Users,
-    },
-    {
-      name: 'Ferrari Foods',
-      logoUrl: ferrariLogo,
-      category: 'Premium Pasta & Sauces',
-      description: 'Offering authentic Italian flavors, Ferrari Foods specializes in gourmet pasta and sauce products for the discerning consumer.',
-      performanceMetric: 'Sales Volume (Units)',
-      performanceValue: '500K+',
-      Icon: DollarSign,
     },
   ];
 
