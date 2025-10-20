@@ -307,7 +307,7 @@ const Home = () => {
                 Al-Fajar Sadiq proudly hosts and supports a growing family of innovative food brands.
             </motion.p>
             {/* --- UPDATED: New grid layout for funded companies --- */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {[brandData.host, ...brandData.brands].map((company, index) => (
                   <motion.div
                       key={company.id}
