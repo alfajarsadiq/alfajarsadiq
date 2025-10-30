@@ -177,13 +177,13 @@ const allProducts: Product[] = [
         description: 'Specially crafted maida for making soft, thin, and perfectly layered parathas and other flaky flatbreads.',
         features: ["For Flaky Parathas", "Soft Dough", "Perfect Layering", "Easy to Roll"]
     },
-    {
-        id: 'ferrari-wheat-arabic-bakers-flour',
-        name: 'Ferrari Arabic Bakers Flour',
-        image: abakersimg,
-        description: 'A unique blend combining the qualities of Arabic flour with the strength of a baker\'s flour, perfect for enhanced Arabic baked goods.',
-        features: ["Unique Arabic & Baker's Blend", "Enhanced Baking Performance", "For Superior Flatbreads", "Reliable Consistency"]
-    },
+    // {
+    //     id: 'ferrari-wheat-arabic-bakers-flour',
+    //     name: 'Ferrari Arabic Bakers Flour',
+    //     image: abakersimg,
+    //     description: 'A unique blend combining the qualities of Arabic flour with the strength of a baker\'s flour, perfect for enhanced Arabic baked goods.',
+    //     features: ["Unique Arabic & Baker's Blend", "Enhanced Baking Performance", "For Superior Flatbreads", "Reliable Consistency"]
+    // },
 
 
     // --- (Keep all your other brand product data below) ---
@@ -434,3 +434,4 @@ const Products = () => {
 };
 
 export default Products;
+
