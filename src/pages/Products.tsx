@@ -73,7 +73,17 @@ import bakersimg from '../assets/bakers.png';
 import allflourimg from '../assets/allflour.png';
 import sspecialimg from '../assets/sspecial.png';
 import sparathaimg from '../assets/sparatha.png';
-import abakersimg from '../assets/bakers.png'; // Assuming this is the image for Ferrari Arabic Bakers Flour
+import harisf from '../assets/harisf.png';
+import flourish from '../assets/flourish.png';
+import maida2020 from '../assets/2020maida.png';
+import roti2020 from '../assets/2020roti.png';
+import dostf from '../assets/dostf.png';
+import gold5050 from '../assets/5050gold.png';
+import jfatta from '../assets/jfatta.png';
+import gmaida from '../assets/gmaida.png';
+import lamisf from '../assets/lamisf.png';
+import batta from '../assets/batta.png';
+import chakkiatta from '../assets/chakkiatta.png';
 
 
 // --- Type definition for a product ---
@@ -177,6 +187,83 @@ const allProducts: Product[] = [
         description: 'Specially crafted maida for making soft, thin, and perfectly layered parathas and other flaky flatbreads.',
         features: ["For Flaky Parathas", "Soft Dough", "Perfect Layering", "Easy to Roll"]
     },
+    {
+    id: 'ferrari-haira-wheat-flour',
+    name: 'Haira Wheat Flour',
+    image: harisf,
+    description: 'Premium quality wheat flour suitable for daily use, delivering consistent taste and texture for soft breads and rotis.',
+    features: ["Premium Wheat", "Consistent Quality", "Daily Use", "Soft Texture"]
+  },
+  {
+    id: 'ferrari-flourish-all-purpose-maida',
+    name: 'Flourish All Purpose Maida',
+    image: flourish,
+    description: 'A versatile all-purpose flour perfect for baking cakes, pastries, and preparing delicious snacks with a fine texture.',
+    features: ["All Purpose", "Fine Texture", "Ideal for Baking", "Versatile Usage"]
+  },
+  {
+    id: 'ferrari-habibi-2020-maida',
+    name: 'Habibi 2020 Maida',
+    image: maida2020,
+    description: 'Refined wheat flour processed to perfection, ensuring white, fluffy, and light results for parathas and bakery items.',
+    features: ["Refined Quality", "Extra White", "Perfect for Parathas", "Smooth Dough"]
+  },
+  {
+    id: 'ferrari-roti-wheat-flour',
+    name: 'Roti Wheat Flour',
+    image: roti2020,
+    description: 'Specially milled wheat flour designed to make soft, fluffy rotis that stay fresh for longer.',
+    features: ["Soft Rotis", "Long-lasting Freshness", "Easy to Knead", "High Water Absorption"]
+  },
+  {
+    id: 'ferrari-dosta-maida',
+    name: 'Dosta Maida',
+    image: dostf,
+    description: 'High-quality refined flour suitable for a wide range of culinary applications, from traditional sweets to savory snacks.',
+    features: ["Multi-purpose", "Refined Texture", "Great for Snacks", "Reliable Quality"]
+  },
+  {
+    id: 'ferrari-golden-5050-wheat-flour',
+    name: 'Golden 5050 Wheat Flour',
+    image: gold5050,
+    description: 'A balanced wheat flour blend offering a great combination of taste and nutrition for versatile cooking needs.',
+    features: ["Balanced Blend", "Nutritious", "Versatile", "Excellent Taste"]
+  },
+  {
+    id: 'ferrari-jannat-atta',
+    name: 'Jannat Atta',
+    image: jfatta,
+    description: 'Traditional whole wheat atta that guarantees wholesome, nutritious, and flavorful chapatis for the whole family.',
+    features: ["Whole Wheat", "Wholesome Taste", "Nutritious", "Traditional Grind"]
+  },
+  {
+    id: 'ferrari-golden-paratha-maida',
+    name: 'Golden Paratha Maida',
+    image: gmaida,
+    description: 'Specialized flour with high elasticity, perfect for making layered, flaky, and golden-brown parathas.',
+    features: ["High Elasticity", "Flaky Parathas", "Golden Results", "Chef's Choice"]
+  },
+  {
+    id: 'ferrari-lamis-wheat-flour',
+    name: 'Lamis Wheat Flour',
+    image: lamisf,
+    description: 'Fine wheat flour ideal for preparing light and airy breads and traditional dishes with authentic flavor.',
+    features: ["Fine Grind", "Authentic Flavor", "Light Texture", "Cooking Essential"]
+  },
+  {
+    id: 'ferrari-best-bhatti-atta',
+    name: 'Best Bhatti Atta',
+    image: batta,
+    description: 'Coarse-ground atta specifically crafted for Tandoors and Bhattis, producing crisp and authentic Tandoori Rotis and Naans.',
+    features: ["Coarse Grind", "Tandoor Special", "Crisp Texture", "Authentic Aroma"]
+  },
+  {
+    id: 'ferrari-sahara-chakki-fresh-atta',
+    name: 'Sahara Chakki Fresh Atta',
+    image: chakkiatta,
+    description: 'Stone-ground whole wheat flour retaining natural fiber and nutrients, delivering the authentic taste of homemade rotis.',
+    features: ["Stone Ground", "Fiber Rich", "100% Atta", "Softest Rotis"]
+  },
     // {
     //     id: 'ferrari-wheat-arabic-bakers-flour',
     //     name: 'Ferrari Arabic Bakers Flour',
@@ -258,18 +345,22 @@ const Products = () => {
     };
 
     // --- UPDATED: Filter logic based on brand and category ---
+    // --- UPDATED: Filter logic based on brand and category ---
     const getFilteredProducts = () => {
         if (!selectedBrand) return [];
+        
         if (selectedBrand === 'ferrari') {
             if (selectedCategory === 'rice') {
                 return allProducts.filter(p => p.id.startsWith('ferrari-rice-'));
             }
             if (selectedCategory === 'wheat') {
-                // ADDED: Filter for Ferrari Wheat Products
-                return allProducts.filter(p => p.id.startsWith('ferrari-wheat-'));
+                // FIXED: Selects all Ferrari products that are NOT rice. 
+                // This captures 'ferrari-haira-wheat-flour', 'ferrari-habibi...', etc.
+                return allProducts.filter(p => p.id.startsWith('ferrari-') && !p.id.startsWith('ferrari-rice-'));
             }
-            return []; // No category selected yet for Ferrari
+            return []; 
         }
+        
         // For other brands
         return allProducts.filter(p => p.id.startsWith(selectedBrand + '-'));
     };
