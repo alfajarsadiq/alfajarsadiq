@@ -85,6 +85,13 @@ import lamisf from '../assets/lamisf.png';
 import batta from '../assets/batta.png';
 import chakkiatta from '../assets/chakkiatta.png';
 
+// Oil Image Imports
+import zainoil from '../assets/oilimage/zainoil.png';
+import hayatpalm from '../assets/oilimage/hayatpalm.png';
+import mabrookoil from '../assets/oilimage/mabrookoil.png';
+import mahapalm from '../assets/oilimage/mahapalm.png';
+import zubaitha from '../assets/oilimage/zubaitha.png';
+
 
 // --- Type definition for a product ---
 interface Product {
@@ -102,11 +109,49 @@ const brands = [
   { name: 'Al Ghurair', logo: alghurairlogo, key: 'alghurair' },
   { name: 'Grand Mills', logo: grandmillslogo, key: 'grandmills' },
   { name: 'Al Ain Flour Mill', logo: alainlogo, key: 'alignfloor' },
+  { name: 'Oil Products', logo: zainoil, key: 'oil' },
   // { name: 'Sounbula Mills', logo: sounlogo, key: 'sounbula' },
 ];
 
 // --- All Products Data (Includes NEW Ferrari Rice & Wheat) ---
 const allProducts: Product[] = [
+    // --- Oil Products ---
+    {
+      id: 'oil-zain-cooking-oil',
+      name: 'Zain Cooking Oil',
+      image: zainoil,
+      description: 'High-quality cooking oil refined for healthy and delicious everyday meals.',
+      features: ["Pure & Refined", "Cholesterol Free", "Rich in Vitamins", "Ideal for Frying & Cooking"]
+    },
+    {
+      id: 'oil-hayat-palm-oil',
+      name: 'Hayat Palm Oil',
+      image: hayatpalm,
+      description: 'Premium palm olein cooking oil offering high heat stability and rich flavor.',
+      features: ["High Heat Stability", "100% Pure Palm Olein", "Rich in Vitamin E", "Perfect for Deep Frying"]
+    },
+    {
+      id: 'oil-mabrook-oil',
+      name: 'Mabrook Edible Oil',
+      image: mabrookoil,
+      description: 'Superior quality edible oil crafted for crisp frying and lighter taste.',
+      features: ["Light & Healthy", "Natural Goodness", "Multi-Purpose Cooking", "High Quality Standards"]
+    },
+    {
+      id: 'oil-maha-palm-oil',
+      name: 'Maha Palm Oil',
+      image: mahapalm,
+      description: 'Golden refined palm oil ensuring great taste and health for all culinary preparations.',
+      features: ["Golden Texture", "Deep Frying Specialist", "Cholesterol Free", "Long Shelf Life"]
+    },
+    {
+      id: 'oil-zubaitha-oil',
+      name: 'Zubaitha Pure Vegetable Oil',
+      image: zubaitha,
+      description: 'Fresh and pure vegetable oil ideal for salads, cooking, and traditional dishes.',
+      features: ["100% Pure Vegetable Oil", "Light & Digestible", "Vitamin Enriched", "Versatile Usage"]
+    },
+
     // --- NEW: Ferrari Foods Rice Products ---
     {
       id: 'ferrari-rice-noora-jeerakasala-rice', // Use 'ferrari-rice-' prefix
